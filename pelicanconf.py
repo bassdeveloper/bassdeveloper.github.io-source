@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Rishabh Chakrabarti'
 SITENAME = 'Bassdeveloper\'s Blog'
-SITEURL = 'http://bassdeveloper.github.io'
+SITEURL = 'https://bassdeveloper.github.io'
 
 PATH = 'content'
 
@@ -20,9 +20,9 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
+LINKS = (('Pelican', 'https://getpelican.com/'),
+         ('Python.org', 'https://python.org/'),
+         ('Jinja2', 'https://jinja.pocoo.org/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
