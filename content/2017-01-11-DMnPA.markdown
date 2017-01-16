@@ -1,12 +1,11 @@
----
-layout: post
-title: Data Mining and Predictive Analytics
-date: '2017-01-11 23:28:04 +0530'
-categories: data
-tags:
-  - data-mining
-  - predictive analytics
----
+Title: Data Mining and Predictive Analytics
+Date: 2017-01-11 23:28
+Modified: 2017-01-16 13:40
+Category: Data-Science
+Tags: Data-Mining, Machine Learning, Predictive Analytics
+Slug: dm-nd-pa
+Authors: Rishabh Chakrabarti
+Summary: My summary of Data Mining and Predictive Analytucs by Larose. and Larose.
 
 # Data Mining and Predictive Analytics
 
@@ -80,7 +79,7 @@ A case where there are no output values and the learning task is to gain some un
 * This type of learning includes **density estimation, learning the support of a distribution, clustering** and so on.There are even more complex models.
 * The simplest case is when the learner is allowed to query the environment about the output associated with a particular input. The study of how this affects the learner's ability to learn different tasks is known as *query learning*.
 * A more complex model of interaction is considered in *reinforcement learning*, where the learner has a range of actions at their disposal which they can take to attempt to move towards states, where they can expect high rewards.
-* The learning methodology can play a part in reinforcement learning, if we treat the optimal action as the output of a function of the current state of the learner. There are, however, significant complications since the quality of the output can only be assessed indirectly as the consequences of an action become clear. 
+* The learning methodology can play a part in reinforcement learning, if we treat the optimal action as the output of a function of the current state of the learner. There are, however, significant complications since the quality of the output can only be assessed indirectly as the consequences of an action become clear.
 #### Basic Difference b/w Supervised and Unsupervised :
 
 ##### Example 1 : Face recognition

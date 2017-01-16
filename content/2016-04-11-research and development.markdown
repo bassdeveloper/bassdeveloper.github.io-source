@@ -1,8 +1,8 @@
 Title: Fabrication of Screen-Printed Electrochemical Bio-sensor
 Date: 2016-04-11 23:28
 Modified: 2017-01-16 13:45
-Category: R&D, Research, Nanotech
-Tags: Bio-sensors, Nanotech
+Category: R&D
+Tags: Bio-sensors, Nanotech, Research
 Slug: r-n-d
 Authors: Rishabh Chakrabarti
 Summary: About my College Research and Development Project on the following topic : "Fabrication of a Screen-printed Electrochemical Biosensor". This project was guided by Dr. Deepshikha Rathore.

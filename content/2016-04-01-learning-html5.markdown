@@ -1,7 +1,7 @@
 Title: Learning HTML5 and Markdown
 Date: 2016-04-01 23:28
 Modified: 2017-01-16 13:40
-Category: Web-Development
+Category: Web-Dev
 Tags: HTML5,Markdown,CSS3
 Slug: learning-html5
 Authors: Rishabh Chakrabarti

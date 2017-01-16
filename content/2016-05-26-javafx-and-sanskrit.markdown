@@ -1,7 +1,7 @@
 Title: Java and JFX
 Date: 2016-05-26 23:28
 Modified: 2017-01-16 13:50
-Category: JavaFX, JFX, SanskritJyotsna, Sanskrit
+Category: Learning
 Tags: Java, JFX, SanskritJyotna, NU-RAP
 Slug: NU-RAP
 Authors: Rishabh Chakrabarti

@@ -1,11 +1,11 @@
 Title: Basic Web Knowledge
 Date: 2016-04-04 23:28
 Modified: 2017-01-16 13:45
-Category: Web-Development
-Tags: DOM,Web,browsers,WebComponents
+Category: Web-Dev
+Tags: DOM,Web-Dev,browsers,WebComponents
 Slug: basic-web-know
 Authors: Rishabh Chakrabarti
-Summary: Basic Web Knowledge and points about DOM, Web Components, Shadow DOM etc. 
+Summary: Basic Web Knowledge and points about DOM, Web Components, Shadow DOM etc.
 
 
 ## Basic Web Knowledge

@@ -1,11 +1,11 @@
 Title: Let Us C
 Date: 2016-05-28 23:28
 Modified: 2017-01-16 13:45
-Category: R&D, Research, Nanotech
-Tags: Bio-sensors, Nanotech
+Category: Learning
+Tags: C, programming
 Slug: let-us-c
 Authors: Rishabh Chakrabarti
-Summary: About my College Research and Development Project on the following topic : "Fabrication of a Screen-printed Electrochemical Biosensor". This project was guided by Dr. Deepshikha Rathore.
+Summary: My summary about the book 'ANSI C'.
 
 # LET US C
 
