@@ -41,11 +41,11 @@ DEFAULT_PAGINATION = 3
 RELATIVE_URLS = True
 
 # Static Paths
-STATIC_PATHS = ['images', 'pdfs']
+STATIC_PATHS = ['images', 'pdfs','themes']
 
 # Plugins :
 PLUGIN_PATHS = ['/home/flatfrog/code/pelican-plugins']
 PLUGINS = ['render_math','summary']
 
 # Theme
-THEME="/home/flatfrog/code/pelican-themes/Flex"
+THEME= 'Flex'
