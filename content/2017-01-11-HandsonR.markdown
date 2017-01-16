@@ -1,16 +1,15 @@
----
-layout: post
-title:  "Hands on R"
-date:   2017-01-11 23:28:04 +0530
-categories: data
-tags:
-- R
+Title: Hands on R
+Date: 2017-01-11 23:28
+Modified: 2017-01-05 19:30
+Category: Data-Science
+Tags: R,programming
+Slug: hands-on-r
+Authors: Rishabh Chakrabarti
+Summary: Summary and points about Hand on R book by R-Garrett-Grolemund.
 
----
-
-# Predictive Modelling
+### Basic Points
 * Vector recycling !
-* Function  returns last line
+* Function  returns the last line
 * Atomic vector is a simple vector of data.
 * Each atomic vector stores its values as a one-dimensional vector, and each atomic vector
 can only store one type of data. You can save different types of data in R by using different
@@ -117,4 +116,4 @@ write.csv(deck, file = "cards.csv", row.names = FALSE)
 * $ and [[]] do the same thing.
 
 Difference :
-![Train_visualization](/assets/image/handsonR-fbb01.png)
+![Train_visualization]({filename}/images/handsonR-fbb01.png)

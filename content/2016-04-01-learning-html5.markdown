@@ -1,12 +1,11 @@
----
-layout: post
-title:  "Learning HTML5"
-date:   2016-03-29 17:11:43 +0530
-categories: learning
-tags:
-- learning
-
----
+Title: Learning HTML5 and Markdown
+Date: 2016-04-01 23:28
+Modified: 2017-01-16 13:40
+Category: Web-Development
+Tags: HTML5,Markdown,CSS3
+Slug: learning-html5
+Authors: Rishabh Chakrabarti
+Summary: My points about HTML5 from W3
 
 ## HTML5 it is...
 This blog contains the notes and results of my experiments with HTML5. Through this blog, I also plan to learn [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) so it's a multi-purpose blog.   
@@ -30,7 +29,7 @@ XHTML is a variant of HTML that uses the syntax of XML, the Extensible Markup La
 
 # DOCTYPE
 A DOCTYPE or Document Type Declaration originates from HTML's SGML lineage. It's use is for legacy purpose only.  
-It was originally used to refer to a Document Type Definition (DTD) — a formal declaration of the elements, attributes and syntactic features that could be used within the document.  
+It was originally used to refer to a Document Type Definition (DTD) � a formal declaration of the elements, attributes and syntactic features that could be used within the document.  
 In HTML5, there are three modes :
 
 
@@ -40,21 +39,21 @@ In HTML5, there are three modes :
 
 Only **No quirks mode** is conforming to use. In each of these three modes, there are some differences in the way the documents are visually rendered.  
 To ensure the most standards compliant rendering, it is important to ensure the **No quirks mode** is used.  
-Thus, the DOCTYPE in the new definition, defines the no-quirks mode in browsers. 
+Thus, the DOCTYPE in the new definition, defines the no-quirks mode in browsers.
 
-# Elements 
+# Elements
 
 There are 5 different types of elements:
 
 
-1. Normal - `<Start tag> Content <End tag>` 
-2. Void - Empty elements, i.e. forbidden from containing any content at all. The self-closing tag syntax is used. 
+1. Normal - `<Start tag> Content <End tag>`
+2. Void - Empty elements, i.e. forbidden from containing any content at all. The self-closing tag syntax is used.
   * E.g. `<hr/>`
 3. Raw text - `<Start tag> Content <End tag>`
   * Here, the content is treated as raw text instead of markup. E.g. `<script>`.  
-  In the script tags, escape sequences are needed too if there's a clash. 
+  In the script tags, escape sequences are needed too if there's a clash.
 4. RCDATA - The term RCDATA elements refers to elements within which character references are supported, but all other content is treated as raw text instead of markup.  
-  * `<Start tag> Content <End Tag>`.E.g. `<textarea>` Character references like `&amp;` are valid. 
+  * `<Start tag> Content <End Tag>`.E.g. `<textarea>` Character references like `&amp;` are valid.
 5. Foreign Elements - Elements in SVG and MathML namespaces.
 
 ### Empty Attribute syntax
@@ -72,9 +71,9 @@ E.g. `<img src = image.png>`
 
 1. Metadata content
   Metadata content includes elements for marking up document metadata;
-  marking up or linking to resources that describe the behaviour or presentation of the document; or indicate relationships with other documents. 
-  
-  '<head>, <title>, <meta>, <link>, <script>, <style>`
+  marking up or linking to resources that describe the behaviour or presentation of the document; or indicate relationships with other documents.
+
+  `<head>, <title>, <meta>, <link>, <script>, <style>`
 
 * Flow content
 

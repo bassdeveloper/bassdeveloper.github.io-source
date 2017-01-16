@@ -1,29 +1,66 @@
-Title: Let Us C
-Date: 2016-05-28 23:28
-Modified: 2017-01-16 13:45
-Category: R&D, Research, Nanotech
-Tags: Bio-sensors, Nanotech
-Slug: let-us-c
-Authors: Rishabh Chakrabarti
-Summary: About my College Research and Development Project on the following topic : "Fabrication of a Screen-printed Electrochemical Biosensor". This project was guided by Dr. Deepshikha Rathore.
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>Bassdeveloper's Blog - Bio-sensors</title>
+        <link rel="stylesheet" href="https://bassdeveloper.github.io/theme/css/main.css" />
 
-# LET US C
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
 
-The latest C is C11.
->Function called at startup is main(). Can be defined by either no parameters or the following parameters
-> int main(int argc, char *argv[])
-> Return type for main should be int.
-> argc cannot be negative.
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://bassdeveloper.github.io/">Bassdeveloper's Blog </a></h1>
+                <nav><ul>
+                    <li><a href="https://bassdeveloper.github.io/category/data-science.html">Data-Science</a></li>
+                    <li><a href="https://bassdeveloper.github.io/category/javafx-jfx-sanskritjyotsna-sanskrit.html">JavaFX, JFX, SanskritJyotsna, Sanskrit</a></li>
+                    <li><a href="https://bassdeveloper.github.io/category/misc.html">misc</a></li>
+                    <li><a href="https://bassdeveloper.github.io/category/rd-research-nanotech.html">R&D, Research, Nanotech</a></li>
+                    <li><a href="https://bassdeveloper.github.io/category/review.html">Review</a></li>
+                    <li><a href="https://bassdeveloper.github.io/category/web-development.html">Web-Development</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
 
-# Terms
-1. access
-〈execution-time action〉 to read or modify the value of an object. Either read OR modify, strictly.
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="https://bassdeveloper.github.io/let-us-c.html">Let Us C</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2016-05-28T23:28:00+02:00">
+                Published: Sat 28 May 2016
+        </abbr>
+		<br />
+        <abbr class="modified" title="2017-01-16T13:45:00+01:00">
+                Updated: Mon 16 January 2017
+        </abbr>
 
-2. alignment
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://bassdeveloper.github.io/author/rishabh-chakrabarti.html">Rishabh Chakrabarti</a>
+        </address>
+<p>In <a href="https://bassdeveloper.github.io/category/rd-research-nanotech.html">R&D, Research, Nanotech</a>.</p>
+<p>tags: <a href="https://bassdeveloper.github.io/tag/bio-sensors.html">Bio-sensors</a> <a href="https://bassdeveloper.github.io/tag/nanotech.html">Nanotech</a> </p>
+</footer><!-- /.post-info --><h1>LET US C</h1>
+<p>The latest C is C11.</p>
+<blockquote>
+<p>Function called at startup is main(). Can be defined by either no parameters or the following parameters
+int main(int argc, char *argv[])
+Return type for main should be int.
+argc cannot be negative.</p>
+</blockquote>
+<h1>Terms</h1>
+<ol>
+<li>
+<p>access
+〈execution-time action〉 to read or modify the value of an object. Either read OR modify, strictly.</p>
+</li>
+<li>
+<p>alignment
   requirement that objects of a particular type be located on storage boundaries with
-  addresses that are particular multiples of a byte address
-
-1 argument
+  addresses that are particular multiples of a byte address</p>
+</li>
+</ol>
+<p>1 argument
 actual argument
 actual parameter (deprecated)
 expression in the comma-separated list bounded by the parentheses in a function call
@@ -228,13 +265,13 @@ the standard headers <float.h>, <iso646.h>, <limits.h>, <stdalign.h>,
 additional library functions), provided they do not alter the behavior of any strictly
 conforming program.4)
 3) A strictly conforming program can use conditional features (see 6.10.8.3) provided the use is guarded
-by an appropriate conditional inclusion preprocessing directive using the related macro. For example:
-#ifdef _ _STDC_IEC_559_ _ /* FE_UPWARD defined */
-/* ... */
+by an appropriate conditional inclusion preprocessing directive using the related macro. For example:</p>
+<h1>ifdef _ <em>STDC_IEC_559</em> _ /<em> FE_UPWARD defined </em>/</h1>
+<p>/<em> ... </em>/
 fesetround(FE_UPWARD);
-/* ... */
-#endif
-4) This implies that a conforming implementation reserves no identifiers other than those explicitly
+/<em> ... </em>/</p>
+<h1>endif</h1>
+<p>4) This implies that a conforming implementation reserves no identifiers other than those explicitly
 reserved in this International Standard.
 8 General §4
 N1570 Committee Draft — April 12, 2011 ISO/IEC 9899:201x
@@ -289,7 +326,7 @@ and any external representation. The description is conceptual only, and does no
 particular implementation.
 10 Environment §5.1.1.2
 N1570 Committee Draft — April 12, 2011 ISO/IEC 9899:201x
-2. Each instance of a backslash character (\) immediately followed by a new-line
+2. Each instance of a backslash character () immediately followed by a new-line
 character is deleted, splicing physical source lines to form logical source lines.
 Only the last backslash on any physical source line shall be eligible for being part
 of such a splice. A source file that is not empty shall end in a new-line character,
@@ -322,6 +359,69 @@ which contains information needed for execution in its execution environment.
 Forward references: universal character names (6.4.3), lexical elements (6.4),
 preprocessing directives (6.10), trigraph sequences (5.2.1.1), external definitions (6.9).
 7) As described in 6.4, the process of dividing a source file’s characters into preprocessing tokens is
-context-dependent. For example, see the handling of < within a #include preprocessing directive.
+context-dependent. For example, see the handling of &lt; within a #include preprocessing directive.
 8) An implementation need not convert all non-corresponding source characters to the same execution
-character.
+character.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://bassdeveloper.github.io/r-n-d.html" rel="bookmark"
+                           title="Permalink to Fabrication of Screen-Printed Electrochemical Bio-sensor">Fabrication of Screen-Printed Electrochemical Bio-sensor</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-04-11T23:28:00+02:00">
+                Published: Mon 11 April 2016
+        </abbr>
+		<br />
+        <abbr class="modified" title="2017-01-16T13:45:00+01:00">
+                Updated: Mon 16 January 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://bassdeveloper.github.io/author/rishabh-chakrabarti.html">Rishabh Chakrabarti</a>
+        </address>
+<p>In <a href="https://bassdeveloper.github.io/category/rd-research-nanotech.html">R&D, Research, Nanotech</a>.</p>
+<p>tags: <a href="https://bassdeveloper.github.io/tag/bio-sensors.html">Bio-sensors</a> <a href="https://bassdeveloper.github.io/tag/nanotech.html">Nanotech</a> </p>
+</footer><!-- /.post-info -->                <p>About my College Research and Development Project on the following topic : "Fabrication of a Screen-printed Electrochemical Biosensor". This project was guided by Dr. Deepshikha Rathore.</p>
+                <a class="readmore" href="https://bassdeveloper.github.io/r-n-d.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://python.org/">Python.org</a></li>
+                            <li><a href="https://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
