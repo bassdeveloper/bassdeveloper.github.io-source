@@ -89,7 +89,7 @@ A case where there are no output values and the learning task is to gain some un
 
 Thus, In supervised learning, the output datasets are provided which are used to train the machine and get the desired outputs whereas in unsupervised learning no datasets are provided, instead the given data is clustered into different classes.
 
-![Supervised_v/s_Unsupervised](assets/2017-01-11-DMnPA-9696e.png)
+![Supervised_v/s_Unsupervised]({filename}/images/2017-01-11-DMnPA-9696e.png)
 
 #### Example 2 :
 
@@ -156,7 +156,7 @@ Thus, given an employee's age, we can use this curve to *predict* his wage. Howe
 We also have information regarding each employee's education level and the year in which the wage was earned.
 
 Wages increase by approximately $10,000$, in a roughly linear (or straight-line) fashion, between 2003 - 09. Though this rise is very slightly relative to the variability in the data. Wages are also typically greater for individuals with higher education levels.
--
+
 ### SVM :
 
 ##### Support Vector Classification :

@@ -4,7 +4,9 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Rishabh Chakrabarti'
 SITENAME = 'Bassdeveloper\'s Blog'
-SITEURL = 'https://bassdeveloper.github.io'
+#SITEURL = 'https://bassdeveloper.github.io'
+SITETITLE = AUTHOR
+SITESUBTITLE = 'Data Specialist'
 
 PATH = 'content'
 
@@ -20,10 +22,12 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'https://getpelican.com/'),
-         ('Python.org', 'https://python.org/'),
-         ('Jinja2', 'https://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = (('Facebook', 'https://www.facebook.com/Rishabh.Chakrabarti'),
+        ('GitHub','#'),
+        ('Pelican', 'https://getpelican.com/'),
+        ('Python.org', 'https://python.org/'),
+        ('Jinja2', 'https://jinja.pocoo.org/'),
+        ('Add link','#'),)
 
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),
@@ -39,4 +43,7 @@ STATIC_PATHS = ['images', 'pdfs']
 
 # Plugins :
 PLUGIN_PATHS = ['/home/flatfrog/code/pelican-plugins']
-PLUGINS = ['render_math']
+PLUGINS = ['render_math','summary']
+
+# Theme
+THEME="/home/flatfrog/code/pelican-themes/Flex"
