@@ -1,0 +1,20 @@
+branches:
+  only:
+  - master
+language: python
+python:
+- 2.7
+install:
+- pip install -r requirements.txt
+script:
+- make html
+notifications:
+  email:
+    on_success: always
+    on_failure: always
+env:
+  global:
+    secure: CB/YwOaocY7fXZErcfTlaLyCDnOCcHFZofGV9Hn75axB6fJgol/0DLl/JwCc3L3jhg8qVaQLjp1gShHfYGUSX+oYlEfPfU8GIGsjEUn1IQ779eL9GdkPVO6SlPni1EMeBOtG3rdjljMEzMK9w3qxKK8s5BkkrKWj+PEsHHJWBp2rmm/4VU+aqwfZN2Ge/8YX18LqWV9kud+1GgYYmu2p2ShqnuGshMpi57/fCwLh98679WOnwjTCpHTzzASrY3EAmmju+5vNZsNb9fmist6qfcDyCMgmuBhzqYNLL3HAdWzrighU49nGgqsJKeQeo/m6QkZxHSq4cejctHU8rBFzeD7jVKDQrUSlkGT57yrJ+IrhCTW/MBvNS/1UYEuGyIydV6yUm3gRdxED+gLXS2C0KqNIY9o0ZB2rBvGQFRVjNU4/luuCzeAJB7nbzcuKTiXhdjzlHoV5xpyoWJHK0U8CRbwUQkkF9a5ldRFFUX/wV5/e0d0yJaFVV8Pc57okUskYASpqKdjabQ3trIZY+9clN5d/+tYAKoQUUMAFFRRIqqdlCdFP5LDgrus1N9mKjnluJt+beCYW79q32OY2IAo5N8sxB6RJIVmAny4SQY/mumuP0PTrD9TgK1/+oOoCyPsIzGkgNb2bG4244HM39DuJ0tdWI+AX0uOg3yC+BpZwHwY=
+before_install:
+- git submodule update --init --recursive
+after_success: bash deploy.sh

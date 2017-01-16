@@ -1,0 +1,120 @@
+---
+layout: post
+title:  "Hands on R"
+date:   2017-01-11 23:28:04 +0530
+categories: data
+tags:
+- R
+
+---
+
+# Predictive Modelling
+* Vector recycling !
+* Function  returns last line
+* Atomic vector is a simple vector of data.
+* Each atomic vector stores its values as a one-dimensional vector, and each atomic vector
+can only store one type of data. You can save different types of data in R by using different
+types of atomic vectors. Altogether, R recognizes six basic types of atomic vectors:
+doubles, integers, characters, logicals, complex, and raw.
+* floating-point errors?
+* Raw vectors store raw bytes of data. Making raw vectors gets complicated, but you can
+make an empty raw vector of length n with raw(n). See the help page of raw for more
+options when working with this type of data:
+* Attributes: An attribute is a piece of information that you can attach to an atomic vector (or any R
+object). The attribute won’t affect any of the values in the object, and it will not appear
+when you display your object. You can think of an attribute as “metadata”; it is just a
+convenient place to put information associated with an object. R will normally ignore
+this metadata, but some R functions will check for specific attributes. These functions
+may use the attributes to do special things with the data.
+* NULL :NULL
+R uses NULL to represent the null set, an empty object. NULL is often
+returned by functions whose values are undefined. You can create a
+NULL object by typing NULL in capital letters.
+* Names
+The most common attributes to give an atomic vector are names, dimensions (dim),
+and classes. Each of these attributes has its own helper function that you can use to give
+attributes to an object. You can also use the helper functions to look up the value of
+these attributes for objects that already have them. For example, you can look up the
+value of the names attribute of die with names:
+* Dimensions
+```r
+x <- 1:6
+dim(x) <-c(2,3)
+roll<-function(){
+    x<-1:6
+    sum(x)
+}
+```
+* Matrix
+```r
+die <- 1:6
+m <- matrix(die, nrow = 2)
+m
+```
+* Arrays
+* Class
+A class is a special case of an atomic vector. For example, the die matrix is a special case
+of a double vector. Every element in the matrix is still a double, but the elements have
+been arranged into a new structure. R added a class attribute to die when you changed
+its dimensions. This class describes die’s new format. Many R functions will specifically
+look for an object’s class attribute, and then handle the object in a predetermined way
+based on the attribute.
+
+* Factors are R's way of storing categorical information.
+
+```r
+> gender<-factor(c("male","female","trans"))
+> attributes(gen
+gender            generic.skeleton  
+> attributes(gender)
+$levels
+[1] "female" "male"   "trans"
+
+$class
+[1] "factor"
+```
+
+* R coercion?
+You may have guessed that this exercise would not go well. Each atomic vector can only
+store one type of data. As a result, R coerces all of your values to character strings:
+```r
+card <- c("ace", "hearts", 1)
+card
+## "ace" "hearts" "1"
+```
+This will cause trouble if you want to do math with that point value, for example, to see
+
+* In some cases, using only a single type of data is a huge advantage. Vectors, matrices,
+and arrays make it very easy to do math on large sets of numbers because R knows that
+it can manipulate each value the same way. Operations with vectors, matrices, and arrays
+also tend to be fast because the objects are so simple to store in memory.
+In other cases, allowing only a single type of data is not a disadvantage. Vectors are the
+most common data structure in R because they store variables very well. Each value in
+a variable measures the same property, so there’s no need to use different types of data.
+* Data frame is a special type of list.
+
+Data frames are the two-dimensional version of a list. They are far and away the most
+useful storage structure for data analysis, and they provide an ideal way to store an entire
+deck of cards. You can think of a data frame as R’s equivalent to the Excel spreadsheet
+because it stores data in a similar format.
+Data frames group vectors together into a two-dimensional table. Each vector becomes
+a column in the table. As a result, each column of a data frame can contain a different
+type of data; but within a column, every cell must be the same type of data, as in
+Figure 3-2.
+* str() function.
+* head() v/s tail()
+* Saving Data
+```r
+write.csv(deck, file = "cards.csv", row.names = FALSE)
+```
+
+###### To sum it up
+![HandsonR_visualization]({filename}/images/handsonR-cac51.png)
+
+* R Notation
+
+* Value selection in R. dataframe[i,j]. Negative values means exclusion. Blank space means all dimensions. Indexing with 0 returns an empty object.
+* $ and [[]] do the same thing.
+
+Difference :
+![Train_visualization](/assets/image/handsonR-fbb01.png)
