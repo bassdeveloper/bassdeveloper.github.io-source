@@ -4,9 +4,12 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Rishabh Chakrabarti'
 SITENAME = 'Bassdeveloper\'s Blog'
-#SITEURL = 'https://bassdeveloper.github.io'
+SITEURL = 'https://bassdeveloper.github.io'
 SITETITLE = AUTHOR
 SITESUBTITLE = 'Data Specialist'
+SITEDESCRIPTION = '%s\'s Notes and Highlights' % AUTHOR
+FAVICON = '/images/favicon.ico'
+SITELOGO = '/images/RC.jpg'
 
 PATH = 'content'
 
@@ -22,21 +25,20 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Facebook', 'https://www.facebook.com/Rishabh.Chakrabarti'),
-        ('GitHub','#'),
-        ('Pelican', 'https://getpelican.com/'),
-        ('Python.org', 'https://python.org/'),
-        ('Jinja2', 'https://jinja.pocoo.org/'),
-        ('Add link','#'),)
+LINKS = (('<i class="fa fa-facebook" aria-hidden="true"></i>', 'https://www.facebook.com/Rishabh.Chakrabarti'),
+        ('<i class="fa fa-github" aria-hidden="true"></i>','https://github.com/bassdeveloper/'),
+        ('<i class="fa fa-google-plus-official" aria-hidden="true"></i>','https://plus.google.com/100116978271306424838'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('Pelican', 'https://getpelican.com/'),
+('Python.org', 'https://python.org/'),
+('Jinja2', 'https://jinja.pocoo.org/'),)
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 3
+
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
 
 # Static Paths
 STATIC_PATHS = ['images', 'pdfs']
