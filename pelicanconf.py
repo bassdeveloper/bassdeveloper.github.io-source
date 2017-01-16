@@ -44,7 +44,7 @@ RELATIVE_URLS = True
 STATIC_PATHS = ['images', 'pdfs','themes']
 
 # Plugins :
-PLUGIN_PATHS = ['/home/flatfrog/code/pelican-plugins']
+PLUGIN_PATHS = ['./pelican-plugins']
 PLUGINS = ['render_math','summary']
 
 # Theme
