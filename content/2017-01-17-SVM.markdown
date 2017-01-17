@@ -1,0 +1,73 @@
+Title: Support Vector Machines
+Date: 2017-01-17 11:28
+Modified: 2017-01-17 12:15
+Category: Learning
+Tags: SVM, Linear-Kernels
+Slug: svm
+Authors: Rishabh Chakrabarti
+Summary: Support Vector Machines learnt from the [SVM Tutorial](http://www.svm-tutorial.com/), by Alexandre KOWALCZYK.
+
+# SVM
+
+> The main goal in SVM is to design a hyperplane that classifies all training vectors in 2 classes.
+
+* **SVM needs training data thus comes under supervised learning**.
+* **SVM is a classification algorithm**
+
+### Example :
+![SVM_Training]({filename}/assets/2017-01-17-SVM-e7301.png)
+
+* We have plotted the size and weight of several people, and there is also a way to distinguish between men and women.
+
+With such data, using a SVM will allow us to answer the following question:
+
+> Given a particular data point (weight and size), is the person a man or a woman ?
+
+* For instance:  if someone measures 175 cm and weights 80 kg, is it a man of a woman?
+
+
+
+## Hyperplane
+
+In geometry, a hyperplane is a **subspace of one dimension less than its ambient space**.
+
+Example :
+
+  * If a space is 3-dimensional then its hyperplanes are the 2-dimensional planes, while
+
+  * If the space is 2-dimensional, its hyperplanes are the 1-dimensional lines.
+
+This notion can be used in any general space in which the concept of the dimension of a subspace is defined.
+
+##  Maximum margin?
+
+Now the following problem exists :
+
+> There can be 'n' number of hyperplanes that can be drawn that separate both our classes.
+
+**But SVM's goal is to get the hyperplane that leaves the maximum margin from both classes ( i.e. the best choice )**
+
+Thus, we arrive at the term : `Maximum Margin Hyperplane`.
+
+![MarginA]({filename}/assets/2017-01-17-SVM-c2025.png)
+
+**The Optimal HyperPlane is a no man's land.**
+
+* **This means that the optimal hyperplane will be the one with the biggest margin.**
+
+*That is why the objective of the SVM is to find  the optimal separating hyperplane which maximizes the margin of the training data.*
+
+## How to Calculate this margin?
+
+> SVM = Support VECTOR Machine
+
+### What is a vector ?
+
+If we define a point $A(3,4)$ in $\Re^2$, we can plot it like this :
+
+![2D_point]({filename}/assets/2017-01-17-SVM-6c98b.png)
+
+> Definition: Any point $x=(x1,x2),x\ne0$, in $\Re^2$,$\Re^2$ specifies a vector in the plane, namely the vector starting at the origin and ending at $x$.
+
+Equations for the hyperplane :
+$$g(\vec{x}) = w^T\vec{x}+w_0$$

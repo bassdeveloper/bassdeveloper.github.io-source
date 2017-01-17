@@ -9,7 +9,7 @@ SITETITLE = AUTHOR
 SITESUBTITLE = 'Learning bout Data'
 SITEDESCRIPTION = '%s\'s Notes and Highlights' % AUTHOR
 FAVICON = '/images/favicon.ico'
-SITELOGO = '/images/RC.jpg'
+SITELOGO = '/images/RC_IBM_SA.jpg'
 
 PATH = 'content'
 
@@ -41,11 +41,11 @@ DEFAULT_PAGINATION = 3
 RELATIVE_URLS = True
 
 # Static Paths
-STATIC_PATHS = ['images', 'pdfs','themes']
+STATIC_PATHS = ['images', 'pdfs','themes','assets']
 
 # Plugins :
 PLUGIN_PATHS = ['./pelican-plugins']
-PLUGINS = ['render_math','summary']
+PLUGINS = ['render_math','summary','pelican-toc']
 
 # Theme
 THEME= 'Flex'
