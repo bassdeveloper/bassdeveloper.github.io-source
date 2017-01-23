@@ -318,6 +318,29 @@ so that <span class="math">\(H_0\)</span> is equidistant from <span class="math"
 <p>We won't select <em>any</em> hyperplane, we will only select the those who meet the 2 following <strong>constraints</strong>:</p>
 <p>For each vector <span class="math">\(x_i\)</span> either :</p>
 <div class="math">$$w.x_i + b \ge 1 \space \text{ for } \space x_i \space \text{ having the class 1} \space \qquad \qquad (4)$$</div>
+<div class="math">$$w.x_i + b \le -1 \space \text{ for } \space x_i \space \text{ having the class -1} \space \qquad \qquad (5)$$</div>
+<h3 id="understanding-the-constraints_1">Understanding the constraints:</h3>
+<p>On the following figures, all redpoints have the class <span class="math">\(1\)</span> and all blue points have the class <span class="math">\(-1\)</span>.</p>
+<p>Let's consider point <span class="math">\(A\)</span>. It is red so it has the class <span class="math">\(1\)</span> and we need to verify it does <span class="math">\(w \dot x_i + b \ge 1\)</span></p>
+<p>When <span class="math">\(x_i = A\)</span> we see that the point is on the hyperplane so <span class="math">\(w \dot x_i + b = 1\)</span> and the constraint is respected. The same applies for <span class="math">\(B\)</span>.</p>
+<p>When <span class="math">\(x_i=C\)</span>, we see that the point is above the hyperplane so <span class="math">\(w.x_i +b \gt 1\)</span> and the constraint is respected. The same applies for <span class="math">\(D,E,F\)</span> and <span class="math">\(G\)</span>.</p>
+<p>With an analogous reasoning, you should find that the second constraint is respected for the class <span class="math">\(-1\)</span>.</p>
+<p><img alt="OMH_4" src="./assets/2017-01-17-SVM-5ce2d.png"/></p>
+<p>The following hyperplane also satisfies the constraints :</p>
+<p><img alt="OMH_5" src="./assets/2017-01-17-SVM-d024f.png"/></p>
+<h5 id="what-does-it-mean-when-a-constraint-is-not-respected">What does it mean when a constraint is not respected?</h5>
+<p>It means that we cannot select these two hyperplanes. You can see that every time the constraints are not satisfied, there are points between 2 hyperplanes.</p>
+<blockquote>
+<p>By defining the constraints, we found a way to reach our initial goal of selecting two hyperplanes <strong>without points between them</strong>. And it works not only in our examples but also in <span class="math">\(p\)</span>-dimensions.</p>
+</blockquote>
+<h5 id="combining-both-constraints">Combining both constraints:</h5>
+<p>In mathematics, people like things to be expressed concisely.</p>
+<p>Equations <strong>(4)</strong> and <strong>(5)</strong> can be combined into a single constraint:</p>
+<p>We start with equation <strong>(5)</strong>:</p>
+<p>For <span class="math">\(x_i\)</span> having the class : <span class="math">\(-1\)</span> :</p>
+<div class="math">$$w \dot x_i + b \le -1$$</div>
+<p>And multiply both sides by <span class="math">\(y_i\)</span>(which is always <span class="math">\(-1\)</span> in this equation).</p>
+<div class="math">$$y_i$$</div>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
