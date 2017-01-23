@@ -62,3 +62,7 @@ The whole conversation flow is directed using Dialogs.
 **`@entity`**
 
 > Each entity value can have multiple synonyms, which define different ways that the same value might be specified in user input.
+
+## API :
+
+### Authentication:

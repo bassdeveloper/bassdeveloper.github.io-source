@@ -217,7 +217,7 @@ Let's compute this value.</p>
 </ul>
 <div class="math">$$a_1 = |a|cos\theta =\vec{a}.\hat{b}=a.\frac{b}{|b|}$$</div>
 <p>
-where the operator <span class="math">\(��\)</span> denotes a dot product, <span class="math">\(|a|\)</span> is the length of a, and <span class="math">\(\theta\)</span> is the angle between <span class="math">\(\vec{a}\)</span> and <span class="math">\(\vec{b}\)</span>.</p>
+where the operator <span class="math">\(\dot\)</span> denotes a dot product, <span class="math">\(|a|\)</span> is the length of a, and <span class="math">\(\theta\)</span> is the angle between <span class="math">\(\vec{a}\)</span> and <span class="math">\(\vec{b}\)</span>.</p>
 <p>The scalar projection is equal to the length of the vector projection, with a minus sign if the direction of the projection is opposite to the direction of b.</p>
 <h2 id="math-for-orthogonal-projection_1">Math for Orthogonal Projection</h2>
 <p>We start with two vectors, <span class="math">\(\vec{w}=(2,1)\)</span> which is normal to the hyperplane, and <span class="math">\(\vec{a}=(3,4)\)</span> which is the vector between the origin and <span class="math">\(A\)</span>.</p>
@@ -263,9 +263,13 @@ Thus, the optimal hyperplane is slightly left from our initial hyperplane:</p>
 <h4 id="step-1-you-have-a-dataset-d-and-you-want-to-classify-it">Step 1 : You have a dataset <span class="math">\(D\)</span> and you want to classify it :</h4>
 <p>Most of the time, the data will be composed of <span class="math">\(n\)</span> vectors <span class="math">\(\vec{x_i}\)</span>.</p>
 <p>Each <span class="math">\(\vec{x_i}\)</span> will also be associated with a value <span class="math">\(y_i\)</span> indicating if the element belongs to the class (+1) or not (i.e. -1).</p>
-<p><span class="math">\(y_i\)</span> can only have 2 possible values -1 or +1.</p>
+<ul>
+<li><span class="math">\(y_i\)</span> can only have 2 possible values -1 or +1.</li>
+</ul>
 <p>Moreover, most of the time,your vector <span class="math">\(\vec{x_i}\)</span> ends up having a lot of dimensions. We can say that <span class="math">\(\vec{x_i}\)</span> is a <span class="math">\(p\)</span>-dimensional vector if it has <span class="math">\(p\)</span> dimensions.</p>
-<p>Thus, the dataset <span class="math">\(D\)</span> is the set of <span class="math">\(n\)</span> couples of element <span class="math">\((\vec{x_i},y_i)\)</span>.</p>
+<ul>
+<li>Thus, the dataset <span class="math">\(D\)</span> is the set of <span class="math">\(n\)</span> couples of element <span class="math">\((\vec{x_i},y_i)\)</span>.</li>
+</ul>
 <p>The more formal definition of an initial dataset in set theory is:
 </p>
 <div class="math">$$D=\{(\vec{x_i},y_i)\space | \space \vec{x_i} \space \epsilon \space  R^p, \space y_i \space \epsilon \space  \{-1,1\}\}_{i=1}^n$$</div>
@@ -276,6 +280,44 @@ Thus, the optimal hyperplane is slightly left from our initial hyperplane:</p>
 <p>The classification is only possible when the data is linearly separable.</p>
 </blockquote>
 <p><img alt="OHP_3" src="./assets/2017-01-17-SVM-17f74.png"/></p>
+<p><em>Assuming that our dataset <span class="math">\(D\)</span> is linearly separable. We now want to find two hyperplanes with no points between them, but we don't have a way to visualize them</em>.</p>
+<p><strong>Take another look at the hyperplane equation.</strong></p>
+<div class="math">$$w^Tx=0$$</div>
+<blockquote>
+<p>Another way in which the above equation can be written as is this:</p>
+</blockquote>
+<div class="math">$$w.x + b = 0 $$</div>
+<p>First, we recognize another notation for the dot product, the article uses <span class="math">\(w.x\)</span> instead of <span class="math">\(w^Tx\)</span>.</p>
+<p>Now wait a minute... Where does the <span class="math">\(+b\)</span> come from?</p>
+<p>It's a notation policy. Our notation incoporates 3D vectors. Whereas other books have a 2D notation:</p>
+<p>Given 2 3-D vectors <span class="math">\(w'(b,-a,1)\)</span> and <span class="math">\(x'(1,x,y)\)</span></p>
+<div class="math">$$w.x=b \times (1) + (-a) \times x + 1 \times y$$</div>
+<div class="math">$$ w.x=y-ax+b \qquad \qquad (1)$$</div>
+<p>Given 2 2-dimensional vectors <span class="math">\(w'(-a,1)\)</span> and <span class="math">\(x'(x,y)\)</span></p>
+<div class="math">$$ w'.x'=(-a) \times x + 1 \times y $$</div>
+<div class="math">$$w'.x'=y-ax \qquad \qquad (2)$$</div>
+<p>Now, if we add <span class="math">\(b\)</span> on both sides of the equation <span class="math">\((2)\)</span> we get:</p>
+<div class="math">$$w'.x' + b = y - ax + b$$</div>
+<div class="math">$$w'.x' + b=w.x$$</div>
+<p><strong> For the rest of this article, we will use 2-dimensional vectors</strong> ( as in equation(2))</p>
+<p>Given a hyperplane <span class="math">\(H_0\)</span> separating the dataset satisfying :</p>
+<div class="math">$$w.x+b=0$$</div>
+<p>We can select 2 other hyperplanes <span class="math">\(H_1\)</span> and <span class="math">\(H_2\)</span> which also separate the data and have the following equations :</p>
+<div class="math">$$w.x + b = \delta$$</div>
+<p>and</p>
+<div class="math">$$w.x + b = -\delta$$</div>
+<p>
+so that <span class="math">\(H_0\)</span> is equidistant from <span class="math">\(H_1\)</span> and <span class="math">\(H_2\)</span>.</p>
+<p>However, here the variable <span class="math">\(\delta\)</span> is not necessary. So we can set <span class="math">\(\delta= 1\)</span> to simplify the problem.</p>
+<div class="math">$$ H_1 \rightarrow w.x + b = 1$$</div>
+<p>and</p>
+<div class="math">$$ H_2 \rightarrow x + b = -1$$</div>
+<blockquote>
+<p>Now, we want to be sure that they have no points between.</p>
+</blockquote>
+<p>We won't select <em>any</em> hyperplane, we will only select the those who meet the 2 following <strong>constraints</strong>:</p>
+<p>For each vector <span class="math">\(x_i\)</span> either :</p>
+<div class="math">$$w.x_i + b \ge 1 \space \text{ for } \space x_i \space \text{ having the class 1} \space \qquad \qquad (4)$$</div>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",

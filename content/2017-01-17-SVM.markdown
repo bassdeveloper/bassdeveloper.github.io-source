@@ -163,7 +163,7 @@ where $a_1$ is a scalar, called the **scalar projection of a onto b**, and $\hat
 * In turn, the scalar projection is defined as
 
 $$a_1 = |a|cos\theta =\vec{a}.\hat{b}=a.\frac{b}{|b|}$$
-where the operator $��$ denotes a dot product, $|a|$ is the length of a, and $\theta$ is the angle between $\vec{a}$ and $\vec{b}$.
+where the operator $\dot$ denotes a dot product, $|a|$ is the length of a, and $\theta$ is the angle between $\vec{a}$ and $\vec{b}$.
 
 The scalar projection is equal to the length of the vector projection, with a minus sign if the direction of the projection is opposite to the direction of b.
 
@@ -255,3 +255,103 @@ Moreover, even if your data is only 2-dimensional it might not be possible to fi
 **Take another look at the hyperplane equation.**
 
 $$w^Tx=0$$
+
+> Another way in which the above equation can be written as is this:
+
+$$w.x + b = 0 $$
+
+First, we recognize another notation for the dot product, the article uses $w.x$ instead of $w^Tx$.
+
+Now wait a minute... Where does the $+b$ come from?
+
+It's a notation policy. Our notation incoporates 3D vectors. Whereas other books have a 2D notation:
+
+Given 2 3-D vectors $w'(b,-a,1)$ and $x'(1,x,y)$
+
+$$w.x=b \times (1) + (-a) \times x + 1 \times y$$
+
+$$ w.x=y-ax+b \qquad \qquad (1)$$
+
+Given 2 2-dimensional vectors $w'(-a,1)$ and $x'(x,y)$
+
+$$ w'.x'=(-a) \times x + 1 \times y $$
+
+$$w'.x'=y-ax \qquad \qquad (2)$$
+
+Now, if we add $b$ on both sides of the equation $(2)$ we get:
+
+$$w'.x' + b = y - ax + b$$
+$$w'.x' + b=w.x$$
+
+** For the rest of this article, we will use 2-dimensional vectors** ( as in equation(2))
+
+Given a hyperplane $H_0$ separating the dataset satisfying :
+
+$$w.x+b=0$$
+
+We can select 2 other hyperplanes $H_1$ and $H_2$ which also separate the data and have the following equations :
+
+$$w.x + b = \delta$$
+
+and
+
+$$w.x + b = -\delta$$
+so that $H_0$ is equidistant from $H_1$ and $H_2$.
+
+However, here the variable $\delta$ is not necessary. So we can set $\delta= 1$ to simplify the problem.
+
+$$ H_1 \rightarrow w.x + b = 1$$
+
+and
+
+$$ H_2 \rightarrow x + b = -1$$
+
+> Now, we want to be sure that they have no points between.
+
+We won't select *any* hyperplane, we will only select the those who meet the 2 following **constraints**:
+
+For each vector $x_i$ either :
+
+$$w.x_i + b \ge 1 \space \text{ for } \space x_i \space \text{ having the class 1} \space \qquad \qquad (4)$$
+
+$$w.x_i + b \le -1 \space \text{ for } \space x_i \space \text{ having the class -1} \space \qquad \qquad (5)$$
+
+### Understanding the constraints:
+
+On the following figures, all redpoints have the class $1$ and all blue points have the class $-1$.
+
+Let's consider point $A$. It is red so it has the class $1$ and we need to verify it does $w \dot x_i + b \ge 1$
+
+When $x_i = A$ we see that the point is on the hyperplane so $w \dot x_i + b = 1$ and the constraint is respected. The same applies for $B$.
+
+When $x_i=C$, we see that the point is above the hyperplane so $w.x_i +b \gt 1$ and the constraint is respected. The same applies for $D,E,F$ and $G$.
+
+With an analogous reasoning, you should find that the second constraint is respected for the class $-1$.
+
+![OMH_4]({filename}/assets/2017-01-17-SVM-5ce2d.png)
+
+The following hyperplane also satisfies the constraints :
+
+![OMH_5]({filename}/assets/2017-01-17-SVM-d024f.png)
+
+##### What does it mean when a constraint is not respected?
+
+It means that we cannot select these two hyperplanes. You can see that every time the constraints are not satisfied, there are points between 2 hyperplanes.
+
+> By defining the constraints, we found a way to reach our initial goal of selecting two hyperplanes **without points between them**. And it works not only in our examples but also in $p$-dimensions.
+
+##### Combining both constraints:
+
+In mathematics, people like things to be expressed concisely.
+
+Equations **(4)** and **(5)** can be combined into a single constraint:
+
+We start with equation **(5)**:
+
+For $x_i$ having the class : $-1$ :
+
+$$w \dot x_i + b \le -1$$
+
+And multiply both sides by $y_i$(which is always $-1$ in this equation).
+
+$$y_i$$

@@ -40,20 +40,22 @@ The lack of encapsulation means your document stylesheet might accidentally appl
 4. Packaging
 
 Shadow DOM addresses the DOM encapsulation problem.  
-# Shadow World
+## Shadow World
 
 With Shadow DOM, elements can get a new kind of node associated with them.  
 This new kind of node is called **shadow root**. The element that has a shadow root associated with it is called a **shadow host**.  
 
 We need to create a Shadow Root for the element -> #nameTag.
 
-{% highlight javascript%}
+```javascript
 <script>
 var shadow = document.querySelector('#nameTag').createShadowRoot();
 var template = document.querySelector('#nameTagTemplate');
 var clone = document.importNode(template.content, true);
 shadow.appendChild(clone);
 </script>
-{% endhighlight %}
+```
 
-Using the Shadow DOM, we have hidden the presentation details from the
+Using the Shadow DOM, we have hidden the presentation details from the actual DOM.
+
+## REST :
