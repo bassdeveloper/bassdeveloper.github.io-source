@@ -350,8 +350,14 @@ We start with equation **(5)**:
 
 For $x_i$ having the class : $-1$ :
 
-$$w \dot x_i + b \le -1$$
+$$w.x_i + b \le -1$$
 
 And multiply both sides by $y_i$(which is always $-1$ in this equation).
 
-$$y_i$$
+$$y_i(w.x_i+b) \ge y_i(-1)$$
+
+Which means equation(5) can also be written as :
+
+$$y_i(w.x_i + b) \ge 1 \space \text{ for } \space x_i \space \text{ having the class 1} \space \qquad \qquad (6)$$
+
+$$y_i(w.x_i + b) \ge 1 \space \text{ for } \space x_i \space \text{ having the class 1} \space \qquad \qquad (6)$$
