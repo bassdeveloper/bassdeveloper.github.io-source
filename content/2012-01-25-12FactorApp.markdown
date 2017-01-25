@@ -1,0 +1,12 @@
+Title: 12 Factor App
+Date: 2017-01-25 14:53
+Modified: 2017-01-25 14:53
+Category: Learning
+Tags: App-dev, 12factor
+Slug: 12factor
+Authors: Rishabh Chakrabarti
+Summary: Learnt about 12-Factor App from NPM module information. Liked it. Decided to simply move forward with my version/summary.
+
+# What are the 12 Commandments?
+
+In the modern era, software is commonly delivered as a service: called **Web Apps**, or *Software-as-a-Service*.
