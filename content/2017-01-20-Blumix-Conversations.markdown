@@ -63,6 +63,12 @@ The whole conversation flow is directed using Dialogs.
 
 > Each entity value can have multiple synonyms, which define different ways that the same value might be specified in user input.
 
+### Intents
+#### Planning your intents:
+Consider what your customers might want to do, and what the application is able to handle.
+
+Choosing the correct intent for a user's input is the first step in providing a useful response.
+
 ## API :
 
 ### Authentication:

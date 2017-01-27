@@ -9,7 +9,7 @@ SITETITLE = AUTHOR
 SITESUBTITLE = 'Learning bout Data'
 SITEDESCRIPTION = '%s\'s Notes and Highlights' % AUTHOR
 FAVICON = '/images/favicon.ico'
-SITELOGO = '/images/RC_IBM_SA.jpg'
+SITELOGO = '/images/RC.jpg'
 
 PATH = 'content'
 
@@ -25,14 +25,13 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('<i class="fa fa-facebook" aria-hidden="true"></i>', 'https://www.facebook.com/Rishabh.Chakrabarti'),
-        ('<i class="fa fa-github" aria-hidden="true"></i>','https://github.com/bassdeveloper/'),
-        ('<i class="fa fa-google-plus-official" aria-hidden="true"></i>','https://plus.google.com/100116978271306424838'),)
+LINKS = (('Learning', 'https://bassdeveloper.github.io/category/learning.html'),
+('Data-Science','https://bassdeveloper.github.io/category/data-science.html'),('Business','https://bassdeveloper.github.io/category/business.html'))
 
 # Social widget
-SOCIAL = (('Pelican', 'https://getpelican.com/'),
-('Python.org', 'https://python.org/'),
-('Jinja2', 'https://jinja.pocoo.org/'),)
+SOCIAL = (('facebook', 'https://www.facebook.com/Rishabh.Chakrabarti'),
+('github', 'https://github.com/bassdeveloper/'),
+('google-plus', 'https://plus.google.com/100116978271306424838'),)
 
 DEFAULT_PAGINATION = 3
 

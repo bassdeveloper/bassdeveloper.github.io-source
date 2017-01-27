@@ -101,11 +101,7 @@
       </nav>
       {% endif %}
 
-      <ul class="social">
-        {% for name, link in SOCIAL %}
-        <li><a class="sc-{{ name }}" href="{{ link }}" target="_blank"><i class="fa fa-{{ name }}"></i></a></li>
-        {% endfor %}
-      </ul>
+
     </div>
 
     {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.aside %}
@@ -118,6 +114,13 @@
       </script>
     {% endif %}
 
+    <footer>
+      <ul class="social">
+        {% for name, link in SOCIAL %}
+        <li><a class="sc-{{ name }}" href="{{ link }}" target="_blank"><i class="fa fa-{{ name }}"></i></a></li>
+        {% endfor %}
+      </ul>
+    </footer>
   </aside>
   <main>
     {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.main_menu %}
