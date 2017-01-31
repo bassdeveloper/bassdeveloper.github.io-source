@@ -316,7 +316,7 @@ $$w.x_i + b \ge 1 \space \text{ for } \space x_i \space \text{ having the class 
 
 $$w.x_i + b \le -1 \space \text{ for } \space x_i \space \text{ having the class -1} \space \qquad \qquad (5)$$
 
-### Understanding the constraints:
+##### Understanding the constraints:
 
 On the following figures, all redpoints have the class $1$ and all blue points have the class $-1$.
 
@@ -360,4 +360,147 @@ Which means equation(5) can also be written as :
 
 $$y_i(w.x_i + b) \ge 1 \space \text{ for } \space x_i \space \text{ having the class 1} \space \qquad \qquad (6)$$
 
-$$y_i(w.x_i + b) \ge 1 \space \text{ for } \space x_i \space \text{ having the class 1} \space \qquad \qquad (6)$$
+In equation (4), as $y_i=1$ it doesn't change the sign of the inequation.
+
+$$y_i(w.x_i + b) \ge 1 \space \text{ for } \space x_i \space \text{ having the class 1} \space \qquad \qquad (7)$$
+
+We combine equations $(6)$ and $(7)$:
+
+$$y_i(w.x_i + b) \ge 1 \space \text{ for all } 1 \le i \le n$$
+
+We now have a unique constraint ( equation 8) instead of two (equations 4 and 5), but they are mathematically equivalent. So their effect is the same (there will be no points between the 2 hyperplanes).
+
+#### Step 3  : Maximize the distance betweeen the 2 hyperplanes.
+
+**The hardest part!**
+
+a) What is the distance between our two hyperplanes ?
+
+Before trying maximize the distance between the two hyperplane, we will first ask ourselves: *How do we compute it?*
+
+Let:
+
+* $H_0$ be the hyperplane having the equation $w.x + b = -1$
+* $H_1$ be the hyperplane having the equation $w.x + b = 1$
+* $x_0$ be a point in the hyperplane $H_0$.
+
+We will call $m$ the perpendicular distance from $x_0$ to the hyperplane $H_1$. By definition, $m$ is what was defined as *margin*.
+
+As $x_0$ is in $H_0$, $m$ is the distance betweeen hyperplanes $H_0$ and $H_1$.
+
+**We will now try to find the value of $m$**
+
+![OMH_6](assets/2017-01-17-SVM-aba3c.png)
+
+You might be tempted to think that if we add $m$ to $\vec{x_0}$
+
+We will get another point, and this point will be on the other hyperplane !
+
+But it does not work, because $m$ is a *scalar*, and $\vec{x_0}$ is a *vector* and adding a scalar with a vector is not possible.
+
+However, we know that adding two vectors is possible, so if we transform $m$ into a vector we will be able to do an addition.
+
+![OMH_7](assets/2017-01-17-SVM-4821d.png)
+
+Looking at the pitcure, the necessity of a vector becomes clear. With just the length $m$, we don't have one crucial information: **the direction**.
+
+We can't add a scalar to a vector, but we know if we multiply a scalar with a vector, we will get another vector.
+
+From our initial statement, we want this vector:
+
+1. To have a magnitude $m$.
+2. To be perpendicular to the hyperplane $H_1$.
+
+Fortunately, we already know a vector perpendicular to $H_1$, that is $\vec{w}$ (because $H_1=w.x+b = 1$)
+
+![OMH_8](assets/2017-01-17-SVM-32d1e.png)
+
+Let's define $\hat{u}=\frac{w}{|w|}$ the unit vector of $\vec{w}$. As it is a unit vector $|\hat{u}|=1$ and it has the same direction as $\vec{w}$ so it is also perpendicular to the hyperplane.
+
+![OMH_9](assets/2017-01-17-SVM-94192.png)
+
+If we multiply $\hat{u}$ by $m$, we get the vector $\vec{k}=m\hat{u}$ and :
+
+1. $|\vec{k}| = m$
+2. $\vec{k}$ is perpendicular to $H_1$ (because it has the same direction as $u$).
+
+From these properties, we can see that $k$ is the vector we were looking for:
+
+![OMH_10](assets/2017-01-17-SVM-6cca1.png)
+
+$$\vec{k}=m\hat{u}=m\frac{w}{|w|}$$
+
+**Thus, we have successfully transformed our scalar $m$ into a vector $\vec{k}$ which we can use to perform an addition with the vector $\vec{x_0}$.**
+
+If we start from the point $x_0$ and add $k$, we find that the point $z_0=x_0 + k$ is in the hyperplane $H_1$ as shown in the following figure:
+
+![OMH_11](assets/2017-01-17-SVM-018d0.png)
+
+The fact that $z_0$ is in $H_1$ means that
+
+$$ w.z_0 + b = 1 \qquad \qquad (10)$$
+
+We can replace $z_0$ by $x_0+k$ because that is how we constructed it.
+
+$$w.(x_0 + k) + b = 1 \qquad \qquad (11)$$
+
+We can now replace $k$ using equation $(9)$
+
+$$w.(x_0 + m\frac{w}{|w|}) + b = 1 \qquad \qquad (12)$$
+
+We now expand the equation (12)
+
+$$w.x_0 + m\frac{w.w}{|w|} + b = 1 \qquad \qquad (13)$$
+
+The dot product of a vector with itself is the square of its norm so:
+
+$$w.x_0 + m\frac{{|w|}^2}{|w|} + b = 1 \qquad \qquad (14)$$
+
+$$w.x_0 + m|w| + b = 1 \qquad \qquad (14)$$
+
+$$w.x_0 + b = 1 - m|w| \qquad \qquad (14)$$
+
+As $x_0$ is in $H_0$ then $w.x_0 + b = -1$
+
+$$-1 = 1 - m|w| \qquad \qquad (17)$$
+
+$$m|w|=2$$
+
+$$m=\frac{2}{|w|}$$
+
+This is it! We found a way to compute $m$.
+
+##### (b) How to maximize the distance between our 2 hyperplanes.
+
+We now have the formula to compute the margin:
+
+$$m=\frac{2}{|w|}$$
+
+The only variable we can change in this formula is the norm of $w$.
+
+Giving it different values:
+
+* When $|w| = 1 $ then $m=2$
+* When $|w| = 2 $ then $m=1$
+* * When $|w| = 4 $ then $m=\frac{1}{2}$
+
+One can easily see that the bigger the norm is, the smaller the margin becomes.
+
+> Maximizing the margin is the same thing as minimizing the norm of w
+
+Our goal is to maximize the margin. Among all possible hyperplanes meeting the constraints, we will choose the hyperplane with the smallest $|w|$ because it is the one which will have the biggest margin.
+
+**This gives us the following `optimization problem`**
+
+>>Minimize in $(w,b)$
+
+>$$|w|$$
+
+>subject to $y_i(w.x_i + b) \ge 1$
+
+> (for any $i=1,...,n$)
+
+Solving the problem is like solving an equation. Once we have solved it, we will have found the couple $(w,b)$ for which  $|w|$ is the smallest possible and the constraints we fixed are met. Which means we will have the equation of the optimal hyperplane !
+
+>The optimization will be covered later in another article.
+> See also [`The kernel trick`](https://bassdeveloper.github.io/kernel-trick.html#kernel-trick)

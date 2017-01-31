@@ -22,7 +22,7 @@ app.get('/', function (req, res) {
    // --
 })
 ```
- * **Request Object** : The request object represents HTTP request and has properties for the request query string, parameters, body, HTTP headers and so on..
+ * **Request Object** : The request object represents HTTP request and has properties for the *request query string, parameters, body, HTTP headers* and so on..
  * **Response Object** : The response object represents the HTTP response that an Express app sends when it gets an HTTP request.
 
 You can print **req** and **res** objects which provide a lot of information related to HTTP request and response including cookies, sessions, URl, etc.
@@ -73,3 +73,13 @@ var server = app.listen(8081, function () {
    console.log("Example app listening at http://%s:%s", host, port)
 })
 ```
+
+## Body Parser
+
+Before we understand what the Body Parser does, we need to understand what is middleware:
+
+### Middleware:
+
+* **Any software that provides services to software applications beyond those available from the operating system**.
+
+* It can be described as *"software glue"*
