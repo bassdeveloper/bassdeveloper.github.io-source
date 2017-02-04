@@ -1,0 +1,14 @@
+Title: Making an App
+Date: 2017-02-04 16:19
+Modified: 2017-02-04 16:19
+Category: Learning
+Tags: App-dev, Cmake, KDE, LabPlot
+Slug: labplot
+Authors: Rishabh Chakrabarti
+Summary: My notes about LabPlot.
+
+# `Cmake`
+
+> `CMake` is an open-source, cross-platform family of tools designed to **build, test and package** software.
+
+CMake is used to control the software compilation process using simple platform and **compiler independent configuration files**, and generate native makefiles and workspaces that can be used in the compiler environment of your choice.
