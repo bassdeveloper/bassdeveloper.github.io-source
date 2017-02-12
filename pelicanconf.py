@@ -44,7 +44,7 @@ STATIC_PATHS = ['images', 'pdfs','themes','assets']
 
 # Plugins :
 PLUGIN_PATHS = ['./pelican-plugins']
-PLUGINS = ['render_math','summary','pelican-toc']
+PLUGINS = ['render_math','summary']
 
 # Theme
 THEME= 'Flex'

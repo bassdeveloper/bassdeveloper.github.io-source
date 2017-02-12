@@ -5,9 +5,11 @@ Category: Learning
 Tags: Kernel-Trick, Kernel
 Slug: kernel-trick
 Authors: Rishabh Chakrabarti
-Summary: An insight into the Kernel-trick which allow higher dimension access/operability.
+Summary: An insight into the Kernel-trick which allow higher dimension access/operability. Source: http://www.eric-kim.net/eric-kim-net/posts/1/kernel_trick.html
 
 # KERNEL?
+> Do Read : http://www.eric-kim.net/eric-kim-net/posts/1/kernel_trick.html
+
 
 > A Kernel Function $K(\vec{v},\vec{w})$ is a function $K:\Re^N \times \Re^N \rightarrow \Re$ that obeys certain mathematical properties.
 
@@ -56,4 +58,81 @@ Recall that a Linear SVM finds a hyperplane $\vec{w}$ that best separates the da
 
 To classify a point $x_i \epsilon X$ (where $X$ is the dataset), we simply see which 'side' of $\vec{w}$ that $x_i$ lies.
 
-**Note**: This description only applies to binary classification problems -
+**Note**: This description only applies to binary classification problems.
+
+A sample dataset :
+
+![Linear_sample]({filename}/assets/2017-01-22-Kernel-trick-5e30e.png)
+
+Training and evaluating a linear SVM on this dataset yields the following decision boundary.
+![SVM_linear]({filename}/assets/2017-01-22-Kernel-trick-ca976.png)
+
+Because the data is easily linearly separable, the SVM is able to find a margin that perfectly separates the training data, which also generalizes very well to the test set. The hyperplane (a line in ) separates the space into two halves: points that live in the brownish region are classified as class '1', whereas points that live in the blueish region are classified as class '0'.
+
+**Unfortunately, in practice we will not always encounter such well-behaved datasets.**
+
+Let's take a look at a dataset that is not linearly separable.
+
+## A Linearly Nonseparable Dataset
+![Non_linear_dataset]({filename}/assets/Non_linear_dataset.png)
+
+The above dataset is a synthetically generated dataset.
+
+```cmd
+==== Evaluating Random Classifier
+== Accuracy: 0.45
+             precision    recall  f1-score   support
+
+          0       0.74      0.42      0.53       151
+          1       0.23      0.55      0.33        49
+
+avg / total       0.62      0.45      0.48       200
+
+==== Finished Random Classifier (0.000 s)
+
+==== Evaluating SVM (kernel='linear'), 2-fold cross validation
+    Parameters to be chosen through cross validation:
+        C: [1.0, 10.0, 100.0, 1000.0, 10000.0]
+== Best Params: {'kernel': 'linear', 'C': 1.0}
+== Best Score: 0.476666666667
+== Accuracy: 0.445
+             precision    recall  f1-score   support
+
+          0       0.78      0.37      0.50       151
+          1       0.26      0.67      0.37        49
+
+avg / total       0.65      0.45      0.47       200
+
+==== Finished Linear SVM (1.290 s)
+```
+
+![Linear_Kernel]({filename}/assets/Linear_Kernel.png)
+
+
+As we can see, the *RandomClassifier* and *Linear SVM* both perform poorly. It's always a bummer when our classifier is as bad as random guessing!
+
+To get a geometric sense of the SVM's failure to cope with this dataset, see the above figure for the decision boundary.
+
+## Dealing with Nonseparable Data
+
+Obviously, we would like to handle linearly nonseparable data - otherwise, SVMs wouldn't be very useful.
+
+> In the SVM example, the primary obstacle is the constraint that the decision boundary be linear in the original feature space (here,$\Re^2$ ).
+
+*However, this is not always the correct decision boundary to find. For instance, in Figure 4, a better decision boundary would be a circular decision boundary that separates the outer cyan ring from the inner red ring.*
+
+> Could we generalize the SVM formulation to explicitly discover decision boundaries with arbitrary shape?
+
+As it turns out, if you get into the nitty-gritty mathematical details of the SVM, the derivations assume that the decision boundary is a separating hyperplane $\vec{w}$.
+
+* I imagine there is a way to recast the SVM *optimization problem* such that a *more-general decision surface* can be found, but I'd bet that the resulting optimization would carry a significant computational burden when compared to the linear SVM formulation.
+
+* So, it appears that we are stuck with an SVM that, for an N-dimensional dataset, finds an (N-1)-dimensional separating hyperplane.
+
+**What if we could play with N...?**
+
+## IDEA !
+
+Separable in a higher dimension
+
+![Higher_Dimension]({filename}/assets/Higher_Dimension.png)
