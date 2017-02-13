@@ -179,4 +179,12 @@ The scheme described so far is attractive due to its simplicity : we only modify
 
 Here is a concrete example : the Polynomial Kernel is a kernel often used with SVMs. For a dataset in $\Re^2$ a two-degree polynomial kernel (implicitly) performs the transfromation $[x_1,x_2]=[x_1^2,x_2^2,\sqrt{2}\cdot x_1 \cdot x_2, \sqrt{2 \cdot c}\cdot x_2, c]$$. This transformation adds three additional dimensions $\Re^2$ -> $\Re^5$.
 
-In general, a d-dimensional polynomial kernel maps from $R^N$ to an $\binom{N+d}{d}$
+In general, a d-dimensional polynomial kernel maps from $R^N$ to an $\binom{N+d}{d}$- dimensional space. Thus, for datasets with large dimensionality, naively performing such a transformation will quickly become intractable.
+
+### We only need the dot products!
+
+It turns out that the SVM has no need to explicitly work in the higher-dimensional space at training or testing time.
+
+One can show that during training, the optimization problem only uses the training examples to compute **pair-wise** *dot products* $<\vec{x_i},\vec{x_j}>$, where $\vec{x_i},\vec{x_j}$  $\epsilon$ $\Re^N$.
+
+Why is this significant? It turns out that there exist functions that, given 2 vectors $v$ and $w$ in $\Re^N$, implicitly computes the dot product
