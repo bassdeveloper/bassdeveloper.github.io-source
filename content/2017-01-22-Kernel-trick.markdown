@@ -5,7 +5,7 @@ Category: Learning
 Tags: Kernel-Trick, Kernel
 Slug: kernel-trick
 Authors: Rishabh Chakrabarti
-Summary: An insight into the Kernel-trick which allow higher dimension access/operability. Source: http://www.eric-kim.net/eric-kim-net/posts/1/kernel_trick.html
+Summary: An insight into the Kernel-trick which allow higher dimension access/operability. Source: [`eric-kim.net`](http://www.eric-kim.net/eric-kim-net/posts/1/kernel_trick.html)
 
 # KERNEL?
 > Do Read : http://www.eric-kim.net/eric-kim-net/posts/1/kernel_trick.html
@@ -136,3 +136,47 @@ As it turns out, if you get into the nitty-gritty mathematical details of the SV
 Separable in a higher dimension
 
 ![Higher_Dimension]({filename}/assets/Higher_Dimension.png)
+
+Let's think outside the box for a moment.
+
+Consider the linearly nonseparable dataset in the above figure (left), with its two concentric rings.
+
+Imagine that this dataset is merely a 2-D version of the *'true'* dataset that lives in $\Re^3$, the above figure (right).
+
+The $\Re^3$ dataset is easily linearly separable by a hyperplane. Thus, provided that we work in this $\Re^3$ space, we can train a linear SVM classifier that **successfully finds a good decision boundary**.
+
+However, we are given the dataset in $\Re^2$.
+
+> The challenge is to find a transformation $T:\Re^2$ -> $\Re^3$, such that the transformed dataset is linearly separable in $\Re^3$.
+
+In the above figure, the $T$ used is :
+
+$$T([x_1,x_2])=[x_1,x_2,x_1^2+x_2^2]$$
+
+which after applied to every point on the left, yields the linearly separable dateset on the right.
+
+> Note : It is  a convention to use the Greek letter 'phi' $\phi$ for this transformation, so $\phi$ will be used from hereon.
+
+Assuming we have such a transformation $\phi$, the new classification pipeline is as follows.
+
+First transform the training set $X$ to $X'$ with $\phi$. Train a linear SVM on $X'$ to get classifier $f_{svm}$. At test time, a new example $\vec{x}$ will first be transformed to $\vec{x'}=\phi(\vec{x})$. The output class label is then determined by :$f_{svm}(\vec{x'})$
+
+> Observation : This is exactly the same as the train/test procedure for regular linear SVMs, but with an added data transformation via $\phi$.
+
+In the next figure, note that the hyperplane learned in $\Re^3$ is non-linear when projected back to $\Re^2$. Thus, we have improved the **expressiveness** of the Linear SVM classifier by working in a higher-dimnensional space.
+
+![Decision Boundary]({filename}/assets/2017-01-22-Kernel-trick-ecb81.png)
+
+#### Recap :
+
+A dataset $D$ that is not linearly separable in $\Re^N$ may be linearly separable in a higher-dimensional space $\Re^M$ (where $M \gt N$). Thus, if we have a transformation $\phi$ that lifts the dataset $D$ to a higher-dimensional $D'$ <u>such that</u> $D'$  is linearly separable, then we can train a linear SVM on $D'$ to find a decision boundary $\vec{w}$ that separates the classes in $D'$. Projecting the decision boundary $\vec{w}$ found in $\Re^M$ back to the original space $R^N$ will yield a nonlinear decision boundary.
+
+This means that we can learn nonlinear SVMs **while still using the original Linear SVM formulation!**
+
+#### Caveat : Impractical for large dimensions
+
+The scheme described so far is attractive due to its simplicity : we only modify the inputs to a 'vanilla' linear SVM. However, consider the computational consequences of increasing the dimensionality from $R^N$ to $R^M$ (with $M \gt N$). If $M$ grows very quickly with respect to $N$ (e.g. $M$ $\epsilon$ $O (2^N)$), then learning SVMs via dataset transformations will incur serious computational and memory problems!
+
+Here is a concrete example : the Polynomial Kernel is a kernel often used with SVMs. For a dataset in $\Re^2$ a two-degree polynomial kernel (implicitly) performs the transfromation $[x_1,x_2]=[x_1^2,x_2^2,\sqrt{2}\cdot x_1 \cdot x_2, \sqrt{2 \cdot c}\cdot x_2, c]$$. This transformation adds three additional dimensions $\Re^2$ -> $\Re^5$.
+
+In general, a d-dimensional polynomial kernel maps from $R^N$ to an $\binom{N+d}{d}$
