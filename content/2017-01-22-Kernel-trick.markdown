@@ -215,4 +215,28 @@ A kernel $K$ effetively computes dot products in a higher-dimensional space $R^M
 
 In symbols :
 
-For $\vec{x_i},\vec{x_j}$  $\epsilon$ $\Re^N$, $K(\vec{x_i},\vec{x_j})={<\Phi(\vec{x_i}),\Phi(\vec{x_j})>}_M$, where ${<\cdot,\cdot>}_M$ is an inner product of $\Re^M$, $M \gt N$, and $\Phi(\vec{x})$ transforms $\vec{x}$
+For $\vec{x_i},\vec{x_j}$  $\epsilon$ $\Re^N$, $K(\vec{x_i},\vec{x_j})={<\Phi(\vec{x_i}),\Phi(\vec{x_j})>}_M$, where ${<\cdot,\cdot>}_M$ is an inner product of $\Re^M$, $M \gt N$, and $\Phi(\vec{x})$ transforms $\vec{x}$ to $\Re^M(\Phi : \Re^N \rightarrow \Re^M)$
+
+> The surprise here being the fact that the Kernel Function can compute dot products between $\vec{v},\vec{w} \in \Re^N$ in $\Re^M$ with a function $K$ that works exclusively in $R^N$.
+
+### Popular Kernels
+
+Most off-the-shelf classifiers allow the user to specify one of three popular kernels: the **polynomial,radial basis function**, and **sigmoid** kernel.
+
+For instance, sklearn's SVM implementation `svm`. SVC has a kernel parameter which can take on `linear`,`poly`,`rbf` or `sigmoid`.
+
+You can even pass a custom kernel.
+
+For the following, let $\vec{x_i},\vec{x_j} \in \Re^N$ be rows from the dataset $X$.
+
+1. **Polynomial Kernel** : $${(\gamma \cdot <\vec{x_i},\vec{x_j}> + r)}^d$$
+
+2. **Radial Basis Function (RBF) Kernel**: $$exp(- \gamma \cdot {|\vec{x_i} - \vec{x_j}|}^2 )$$, where $\gamma \gt 0$.
+
+3. **Sigmoid Kernel** :
+
+$$tanh{(<\vec{x_i},\vec{x_j}> + r)}^d$$
+
+> Note : For some reason, sklearn's `svm.SVC` appears to use both the `gamma` and `coef0` parameters for the `kernel = sigmoid`, despite the above definition only having one parameter `r`. Not cross-validating across both `gamma` and `coef0` resulted in degenerate decision boundaries.
+
+**Choosing the `correct kernel` is a `non-trivial` task.**
