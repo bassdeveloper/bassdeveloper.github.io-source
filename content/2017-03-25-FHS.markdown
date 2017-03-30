@@ -1,0 +1,34 @@
+Title: File Hierarchy Systems
+Date: 2017-03-25 13:28
+Modified: 2017-03-25s 13:28
+Category: Learning
+Tags: FHS, File Hierarchy
+Slug: fhs
+Authors: Rishabh Chakrabarti
+Summary: An insight into FHS
+
+# Filesystem
+
+It is possible to define two independent distinctions among files :
+
+1. Shareable v/s
+2. Unshareable
+
+and
+
+1. Variable v/s
+2. Static
+
+**In general, files that differ in either of these respects should be located in different directories.**
+
+This makes it easy to store files with different usage characteristics on different filesystems.
+
+* "Shareable" files are those that can be stored on one host and used on others.
+
+* "Unshareable" files are those that are not shareable.
+
+For example, the files in user home directories are shareable whereas device lock files are not.
+
+* "Static" files include binaries, libraries, documentation files and other files that do not change without system administrator intervention.
+
+* "Variable" files are files that are not static.

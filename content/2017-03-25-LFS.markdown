@@ -1,0 +1,135 @@
+Title: Linux from Scratch
+Date: 2017-03-25 13:28
+Modified: 2017-03-25s 13:28
+Category: Learning
+Tags: LFS, Linux From Scratch
+Slug: lfs
+Authors: Rishabh Chakrabarti
+Summary: An insight into LFS.
+
+# Let's Scratch the surface
+
+LFS follows Linux Standards :
+* [POSIX.1-2008](http://pubs.opengroup.org/onlinepubs/9699919799/)
+* [Filesystem Hierarchy Standard (FHS) Version 3.0](http://refspecs.linuxfoundation.org/fhs.shtml)
+* [Linux Standard Base (LSB) Version 5.0](http://refspecs.linuxfoundation.org/lsb.shtml)
+
+## Pre-Requisites
+
+### Software Building
+#### Overview
+Many software packages for the various flavors of UNIX and Linux come as compressed archives of source files. The same package may be "built" to run on different target machines, and this saves the author of a software from having to produce multiple versions.
+
+A single distribution of a software package may thus end up running, in various incarnations, on a Intel box, a DEC Alpha, a RISC workstation, or even a mainframe.
+
+Thus, this puts the responsibility of actually "building" and installing the software on the end user, the de facto "system administrator", the fellow sitting at the keyboard -- you.
+
+#### Unpacking the Files
+Once you have downloaded or otherwise acquired a software package. Most likely, it is archived (tarred) and compressed (gzipped),
+
+> On it's own, a TAR file is not a compressed file, it is simply a format used for archiving files (merging several files into one). TAR stands for tape archive.
+> The TAR format was originally designed for backup purposes using tapes, however it is quite often used for downloads and application packages.
+> TAR files are not able to run a single file in the archive without first extracting the contents of the whole archive.
+
+in `.tar.gz` or `.tgz` form (familiarly known as a *tarball*).
+
+First copy it to a working directory. Then `untar` and `gunzip` it. The appropriate command for this is
+```none
+$ tar -xvzf <filename>
+```
+where *filename* is the name of the software file, of course. The de-archiving process will usually install the appropriate files in subdirectories it will create.
+
+> If the package name has a `.Z` suffix, then the above procedure will serve just as well
+
+The above method of unpacking "tarballs" is equivalent to either of the following :
+
+```none
+$ gzip -cd <filename> | tar xvf -
+
+$ gunzip -c <filename> | tar xvf -
+```
+
+> The '-' causes the `tar` comand to take it's input from `stdin`
+
+Source files in the new *bzip2* (`.bz2`) format can be unarchived by
+
+```none
+$ bzip2 -cd <filename> | tar xvf -
+
+$ tar xyvf <filename>
+```
+Sometimes, the archived file must be untarred and installed from the user's home directory, or perhaps in a certain other directory, such as `/`,`/usr/src`, or `/opt`, as specified in the package's config info.
+
+Should you get an error message attempting to untar it, this may be the reason. Read the package docs, especially the `README` and/or `Install` files, if present, and edit the config files and/or `Makefiles` as necessary, consistent with the installation instructions.
+
+Note that you would not ordinarily alter the `Imake` file, since this could have unforeseen consequences.
+
+Most software packages permit automating this process by running `make install` to emplace the binaries in the appropriate system areas.
+
+* You might encounter `shar` files or *shell archives*, especially in the source code newsgroups on the Internet. These remain in use because they are readable to humans, and this permits newsgroup moderators to sort through them and reject unsuitable ones. They may be unpacked by the `unshar filename.shar` command. Otherwise the procedure for dealing with them is the same as for "tarballs".
+
+* Patching can be done to incorporate bug fixes into the unarchived source files using a `patch` or `diff` file that lists the changes. The doc files and/or `README` file will inform you should this be the case. Normal syntax for invoking Larry Wall's powerful *patch* utility is `patch < patchfile`.
+
+#### Build Stage i.e. Using Make
+
+The `Makefile` is the key to the build process.
+
+In its simplest form, a `Makefile` is a script for compiling or building the "binaries", the executable portions of a package.
+
+The `Makefile` can provide a means of updating a software package without having to recompile every single source file in it.
+
+At some point, the Makefile launches `cc` or `gcc`. This is actually a preprocessor, a C (or C++) compiler and linker, invoked in that order. This process converts source in to binaries, the actual executables.
+
+Invoking `make` usually involves just typing `make`. This generally builds all the necessary executable files for the package in question. However, make can also do other tasks, such as installing the files in proper directories (`make install`) and removing stale object files (`make clean`).
+
+Running `make -n` permits previewing the build process, as it prints out all the commands that would be triggered by a make, without actually executing them.
+
+Only the simplest software uses a generic Makefile.
+
+More complex installations require tailoring the Makefile according to the location of libraries, include files, and resources on your particular machine. This is especially the case when the build needs `X11` libraries to install. `lmake` and `xmkmf` accomplish the task.
+
+* An `Imakefile` is, to quote the man page, a "template" Makefile. The imake utility constructs a Makefile appropriate for your system from the Imakefile. In almost all cases, however, you would run `xmkmf`, a shell script that invokes imake, a front end for it.
+
+Check the `README` or `INSTALL` file included in the software archive for specific instructions.
+
+`xmkmf` and `make` may need to be invoked as root, especially when doing a `make install` to move the binaries over to the `/usr/bin` or `/usr/local/bin` directories.
+
+Using `make` as an ordinary user without root priveleges will likely result in *write access denied* error messages because you lack write permission to system directories. Check also that the binaries created have the proper execute permissions for you and any other appropriate users.
+
+* Sometimes, there will be no `Imake` file, instead there will be an `INSTALL` or `configure` script that will accomplish this purpose.
+
+Note that if you run `configure`, it should be invoked as `./configure` to ensure that the correct `configure` script in the current directory is called. In most cases, the `README` file included with the distribution will explain the install procedure.
+
+It is usually a good idea to visually inspect the `Makefile` that `xmkmf` or one of the install script builds. The Makefile will normally be correct for your system, but you may occasionally be required to "tweak" it or correct errors manually.
+
+Installing the freshly built binaries into the appropriate system directories is usually a matter of running `make install` as root. The usual directories for system-wide binaries on modern Linux distributions are `/usr/bin, /usr/X11R6/bin,/usr/local/bin`. The preferred directory for new packages is `/usr/local/bin` as this will keep separate binaries not part of the original Linux installation.
+
+Packages originally targeted for commercial versions of UNIX may attempt to install in the `/opt` or other unfamiliar directory. This will, of course, result in an installation error if the intended installation directory doesn't exist.
+
+The simplest way to deal with this is to create, as root, an `/opt` directory, let the package install there, then add the directory to the `PATH` environmental variable. Alternatively, you may create symbolic links to the `/usr/local/bin` directory.
+
+Your general installation procedure will therefore be :
+
+* Read the `README` file and other applicable docs.
+* Run `xmkmf -a` or the `INSTALL` or `configure` script.
+* Check the `Makefile`
+* If necessary, run `make clean`, `make Makefiles`, `make includes`, and `make depend`.
+* Run `make`
+* Check the file permissions
+* If necessary, run `make install`
+
+> * You would not normally build a package as root. Doing an `su` to root is only necessary for installing the compiled binaries into system directories.
+> * After becoming familiar with `make` and its uses, you may wish to add additional optimization options passed to `gcc` in the standard `Makefile` included or created in the package you are installing.
+
+
+### General Concepts
+
+1. **Concurrent Execution** : Functions that suspend the execution of the calling thread shall not cause the execution of other threads to be independently suspended.
+2. **Default Initialization**: Default Initialization causes an object to be initialized according to these rules :
+  * If it has *pointer type*, it is initialized to a null pointer.
+  * If it has *arithmetic type*, it is initialized to (positive or unsigned) zero.
+  * If it is an *aggregate type*, every member is initialized (recursively) according to these rules
+  * If it is a *union*, the first named member is initialized (recursively) according to these rules.
+
+For an object of *aggregate type*, with an *explicit initializer*, the initialization shall occur in initializer list order, each initializer provided for a particular sub-object overriding any previously listed initializer for the same sub-object; all sub-objects that are not initialized explicitly shall by initialized implicitly according to the rules for default initialization.
+3.  
