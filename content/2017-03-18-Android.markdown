@@ -6,7 +6,7 @@ Tags: Android,android,Android SDK
 Slug: android
 Authors: Rishabh Chakrabarti
 Summary: Notes on building an Android App.
-
+Status:draft
 # Building an Android App
 
 ## Activity
@@ -20,4 +20,4 @@ An activity is a single, focused thing that the user can do. Almost all activiti
 
 There are 2 methods almost all subclasses of Activity will implement :
 
-* `onCreate(Bundle)` is where you initialize your activity. Most importantly, here you will usually call `setContentView(int)` with a layout resource defining your UI, and using `findViewById(int)` to retrieve the widgets in that UI that 
+* `onCreate(Bundle)` is where you initialize your activity. Most importantly, here you will usually call `setContentView(int)` with a layout resource defining your UI, and using `findViewById(int)` to retrieve the widgets in that UI that

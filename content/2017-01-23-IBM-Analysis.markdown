@@ -6,6 +6,7 @@ Tags: IBM, Business, Analysis
 Slug: ibm-case
 Authors: Rishabh Chakrabarti
 Summary: IBM Report and Analysis for 4th Quarter and Full-Year for the year of 2016. Summary by Ginni Rometty, Chairman, President and CEO of IBM.
+Status:draft
 
 # IBM
 

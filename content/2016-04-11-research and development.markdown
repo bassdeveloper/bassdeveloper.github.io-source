@@ -6,6 +6,8 @@ Tags: Bio-sensors, Nanotech, Research
 Slug: r-n-d
 Authors: Rishabh Chakrabarti
 Summary: About my College Research and Development Project on the following topic : "Fabrication of a Screen-printed Electrochemical Biosensor". This project was guided by Dr. Deepshikha Rathore.
+Status:published
+
 
 ## Research and Development
 

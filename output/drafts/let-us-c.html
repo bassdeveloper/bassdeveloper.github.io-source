@@ -1,31 +1,113 @@
-Title: Let Us C
-Date: 2016-05-28 23:28
-Modified: 2017-01-16 13:45
-Category: Learning
-Tags: C, programming
-Slug: let-us-c
-Authors: Rishabh Chakrabarti
-Summary: My summary about the book 'ANSI C'.
-Status:draft
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
 
 
-# LET US C
 
-The latest C is C11.
->Function called at startup is main(). Can be defined by either no parameters or the following parameters
-> int main(int argc, char *argv[])
-> Return type for main should be int.
-> argc cannot be negative.
 
-# Terms
-1. access
-〈execution-time action〉 to read or modify the value of an object. Either read OR modify, strictly.
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 
-2. alignment
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Rishabh Chakrabarti" />
+<meta name="description" content="My summary about the book 'ANSI C'." />
+<meta name="keywords" content="C, programming">
+<meta property="og:site_name" content="Bassdeveloper's Blog"/>
+<meta property="og:title" content="Let Us C"/>
+<meta property="og:description" content="My summary about the book 'ANSI C'."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../drafts/let-us-c.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-05-28 23:28:00+02:00"/>
+<meta property="article:modified_time" content="2017-01-16 13:45:00+01:00"/>
+<meta property="article:author" content="../author/rishabh-chakrabarti.html">
+<meta property="article:section" content="Learning"/>
+<meta property="article:tag" content="C"/>
+<meta property="article:tag" content="programming"/>
+<meta property="og:image" content="/images/RC.jpg">
+
+  <title>Bassdeveloper's Blog &ndash; Let Us C</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+        <img src="/images/RC.jpg" alt="Rishabh Chakrabarti" title="Rishabh Chakrabarti">
+      </a>
+      <h1><a href="..">Rishabh Chakrabarti</a></h1>
+
+<p>Learning bout Data</p>
+      <nav style="margin-top: 150px;">
+        <ul class="list">
+
+          <li><a href="https://bassdeveloper.github.io/category/learning.html" target="_blank">Learning</a></li>
+          <li><a href="https://bassdeveloper.github.io/category/data-science.html" target="_blank">Data-Science</a></li>
+          <li><a href="https://bassdeveloper.github.io/category/business.html" target="_blank">Business</a></li>
+        </ul>
+      </nav>
+
+
+    </div>
+
+
+    <footer>
+      <ul class="social">
+        <li><a class="sc-facebook" href="https://www.facebook.com/Rishabh.Chakrabarti" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/bassdeveloper/" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-google-plus" href="https://plus.google.com/100116978271306424838" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+      </ul>
+    </footer>
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="let-us-c">Let Us C</h1>
+    <p>
+          Posted on Sat 28 May 2016 in <a href="../category/learning.html">Learning</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <h1>LET US C</h1>
+<p>The latest C is C11.</p>
+<blockquote>
+<p>Function called at startup is main(). Can be defined by either no parameters or the following parameters
+int main(int argc, char *argv[])
+Return type for main should be int.
+argc cannot be negative.</p>
+</blockquote>
+<h1>Terms</h1>
+<ol>
+<li>
+<p>access
+〈execution-time action〉 to read or modify the value of an object. Either read OR modify, strictly.</p>
+</li>
+<li>
+<p>alignment
   requirement that objects of a particular type be located on storage boundaries with
-  addresses that are particular multiples of a byte address
-
-1 argument
+  addresses that are particular multiples of a byte address</p>
+</li>
+</ol>
+<p>1 argument
 actual argument
 actual parameter (deprecated)
 expression in the comma-separated list bounded by the parentheses in a function call
@@ -230,13 +312,13 @@ the standard headers <float.h>, <iso646.h>, <limits.h>, <stdalign.h>,
 additional library functions), provided they do not alter the behavior of any strictly
 conforming program.4)
 3) A strictly conforming program can use conditional features (see 6.10.8.3) provided the use is guarded
-by an appropriate conditional inclusion preprocessing directive using the related macro. For example:
-#ifdef _ _STDC_IEC_559_ _ /* FE_UPWARD defined */
-/* ... */
+by an appropriate conditional inclusion preprocessing directive using the related macro. For example:</p>
+<h1>ifdef _ <em>STDC_IEC_559</em> _ /<em> FE_UPWARD defined </em>/</h1>
+<p>/<em> ... </em>/
 fesetround(FE_UPWARD);
-/* ... */
-#endif
-4) This implies that a conforming implementation reserves no identifiers other than those explicitly
+/<em> ... </em>/</p>
+<h1>endif</h1>
+<p>4) This implies that a conforming implementation reserves no identifiers other than those explicitly
 reserved in this International Standard.
 8 General §4
 N1570 Committee Draft — April 12, 2011 ISO/IEC 9899:201x
@@ -291,7 +373,7 @@ and any external representation. The description is conceptual only, and does no
 particular implementation.
 10 Environment §5.1.1.2
 N1570 Committee Draft — April 12, 2011 ISO/IEC 9899:201x
-2. Each instance of a backslash character (\) immediately followed by a new-line
+2. Each instance of a backslash character () immediately followed by a new-line
 character is deleted, splicing physical source lines to form logical source lines.
 Only the last backslash on any physical source line shall be eligible for being part
 of such a splice. A source file that is not empty shall end in a new-line character,
@@ -324,6 +406,41 @@ which contains information needed for execution in its execution environment.
 Forward references: universal character names (6.4.3), lexical elements (6.4),
 preprocessing directives (6.10), trigraph sequences (5.2.1.1), external definitions (6.9).
 7) As described in 6.4, the process of dividing a source file’s characters into preprocessing tokens is
-context-dependent. For example, see the handling of < within a #include preprocessing directive.
+context-dependent. For example, see the handling of &lt; within a #include preprocessing directive.
 8) An implementation need not convert all non-corresponding source characters to the same execution
-character.
+character.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../tag/c.html">C</a>
+      <a href="../tag/programming.html">programming</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Rishabh Chakrabarti </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Bassdeveloper's Blog ",
+  "url" : "..",
+  "image": "/images/RC.jpg",
+  "description": "Rishabh Chakrabarti's Notes and Highlights"
+}
+</script>
+</body>
+</html>

@@ -6,6 +6,7 @@ Tags: Watson,Watson Knowledge,IBM
 Slug: weks
 Authors: Rishabh Chakrabarti
 Summary: Watson Knowledge Studio summary from the documentation.
+Status:draft
 
 # Think!!
 IBM Watson™ Knowledge Studio to

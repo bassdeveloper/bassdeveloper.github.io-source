@@ -6,6 +6,7 @@ Tags: Keywords, Semantic Queries
 Slug: quick
 Authors: Rishabh Chakrabarti
 Summary: From Keywords to Semantic Queries - Incremental Query Construction on the Semantic Web
+Status:draft  
 
 # Introduction
 

@@ -6,6 +6,7 @@ Tags: SVM, Linear-Kernels
 Slug: svm
 Authors: Rishabh Chakrabarti
 Summary: Support Vector Machines learnt from the [SVM Tutorial](http://www.svm-tutorial.com/), by Alexandre KOWALCZYK.
+Status:published
 
 # SVM
 > Do visit [SVM Tutorial website](http://www.svm-tutorial.com/).

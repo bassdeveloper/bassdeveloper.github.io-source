@@ -6,6 +6,7 @@ Tags: Neural Networks, Speech recognition
 Slug: neural
 Authors: Rishabh Chakrabarti
 Summary: Dive into Neural Networks to build End-to-End Systems
+Status:draft
 
 # Wanna Chat Honey?
 

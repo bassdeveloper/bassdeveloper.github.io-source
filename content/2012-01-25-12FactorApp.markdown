@@ -6,6 +6,8 @@ Tags: App-dev, 12factor
 Slug: 12factor
 Authors: Rishabh Chakrabarti
 Summary: Learnt about 12-Factor App from NPM module information. Liked it. Decided to simply move forward with my version/summary.
+Status:draft
+
 
 # What are the 12 Commandments?
 

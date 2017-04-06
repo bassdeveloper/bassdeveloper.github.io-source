@@ -6,6 +6,7 @@ Tags: RnR,Bluemix, IBM, Rank, Retrieve
 Slug: bluemix-rnr
 Authors: Rishabh Chakrabarti
 Summary: An insight into Retrieve and Rank service of Watson Developer Cloud ( a.k.a. Bluemix).
+Status:draft
 
 # What's in the service?
 

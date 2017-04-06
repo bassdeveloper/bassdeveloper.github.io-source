@@ -1,11 +1,12 @@
 Title: Linux from Scratch
 Date: 2017-03-25 13:28
-Modified: 2017-03-25s 13:28
+Modified: 2017-03-25 13:28
 Category: Learning
 Tags: LFS, Linux From Scratch
 Slug: lfs
 Authors: Rishabh Chakrabarti
 Summary: An insight into LFS.
+Status:draft
 
 # Let's Scratch the surface
 

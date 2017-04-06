@@ -6,6 +6,8 @@ Tags: Java, JFX, SanskritJyotna, NU-RAP
 Slug: NU-RAP
 Authors: Rishabh Chakrabarti
 Summary: Points of Learning for JavaFX, which I used as my GUI framework for the following project - Sanskrit Jyotsna. This was for my Summer Internship as a Research Assistant for my University, i.e. NU-RAP (NIIT University Research Assistanceship Programme). The project was under the guidance of Dr. Sudhir Kaikar.
+Status:draft
+
 
 # JAVAFX
 

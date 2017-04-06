@@ -6,6 +6,7 @@ Tags: R,programming
 Slug: hands-on-r
 Authors: Rishabh Chakrabarti
 Summary: Summary and points about Hand on R book by R-Garrett-Grolemund.
+Status:draft
 
 ### Basic Points
 * Vector recycling !

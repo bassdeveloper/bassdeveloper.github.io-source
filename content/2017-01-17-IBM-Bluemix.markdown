@@ -6,6 +6,7 @@ Tags: Bluemix, IBM
 Slug: ibm-bluemix
 Authors: Rishabh Chakrabarti
 Summary: Learning about Bluemix and its features.
+Status:draft
 
 # IBM® Bluemix®
 A cloud computing platform that **combines platform as a service (PaaS) with infrastructure as a service (IaaS)**.

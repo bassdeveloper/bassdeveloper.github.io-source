@@ -6,6 +6,7 @@ Tags: DOM,Web-Dev,browsers,WebComponents
 Slug: basic-web-know
 Authors: Rishabh Chakrabarti
 Summary: Basic Web Knowledge and points about DOM, Web Components, Shadow DOM etc.
+Status:draft
 
 
 ## Basic Web Knowledge

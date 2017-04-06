@@ -6,6 +6,9 @@ Tags: HTML5,Markdown,CSS3
 Slug: learning-html5
 Authors: Rishabh Chakrabarti
 Summary: My points about HTML5 from W3
+Status:draft
+
+
 
 ## HTML5 it is...
 This blog contains the notes and results of my experiments with HTML5. Through this blog, I also plan to learn [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) so it's a multi-purpose blog.   

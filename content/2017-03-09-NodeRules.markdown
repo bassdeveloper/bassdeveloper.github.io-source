@@ -6,5 +6,6 @@ Tags: node-rules,node,rules-engine,business-rules-engine
 Slug: norules
 Authors: Vinod Munagala
 Summary: Summary of node rules for Asian Paints
+Status:draft
 
 # Node Rules

@@ -1,11 +1,12 @@
 Title: File Hierarchy Systems
 Date: 2017-03-25 13:28
-Modified: 2017-03-25s 13:28
+Modified: 2017-03-25 13:28
 Category: Learning
 Tags: FHS, File Hierarchy
 Slug: fhs
 Authors: Rishabh Chakrabarti
 Summary: An insight into FHS
+Status:draft
 
 # Filesystem
 
@@ -32,3 +33,14 @@ For example, the files in user home directories are shareable whereas device loc
 * "Static" files include binaries, libraries, documentation files and other files that do not change without system administrator intervention.
 
 * "Variable" files are files that are not static.
+
+**Rationale**
+
+ Shareable files can be stored on one host and used on several others.
+
+ Typically , however, not all files in the filesystem hierarchy are shareable and so each system has local storage containing at least its unshareable files.
+ It is convenient if all the files a system requires that are stored on a foreign host can be made available by *mounting one or a few directories from the foreign host*.
+
+Static and variables should be segregated because static files, unlike variable files, can be stored on read-only media and do not to be backed up the same schedule as variable files.
+
+Historical UNIX-like filesystem hierarchies contained both static and variable files under both `/usr` and `/etc`. In order to realize the advantages mentioned above, the `/var` hierarchy was created and all variable files were transferred from /usr to /var. Consequently `/usr` can now be mounted read-only (if it is a separate filesystem).  

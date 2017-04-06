@@ -6,6 +6,7 @@ Tags: App-dev, Cmake, KDE, LabPlot
 Slug: labplot
 Authors: Rishabh Chakrabarti
 Summary: My notes about LabPlot.
+Status:draft
 
 # `Cmake`
 

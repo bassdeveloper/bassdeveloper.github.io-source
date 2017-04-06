@@ -6,6 +6,7 @@ Tags: Kernel-Trick, Kernel
 Slug: kernel-trick
 Authors: Rishabh Chakrabarti
 Summary: An insight into the Kernel-trick which allow higher dimension access/operability. Source: [`eric-kim.net`](http://www.eric-kim.net/eric-kim-net/posts/1/kernel_trick.html)
+Status:published
 
 # KERNEL?
 > Do Read : http://www.eric-kim.net/eric-kim-net/posts/1/kernel_trick.html

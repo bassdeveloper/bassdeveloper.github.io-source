@@ -6,6 +6,7 @@ Tags: Data-Mining, Machine Learning, Predictive Analytics
 Slug: dm-nd-pa
 Authors: Rishabh Chakrabarti
 Summary: My summary of Data Mining and Predictive Analytucs by Larose. and Larose.
+Status:draft
 
 # Data Mining and Predictive Analytics
 
@@ -156,22 +157,3 @@ Thus, given an employee's age, we can use this curve to *predict* his wage. Howe
 We also have information regarding each employee's education level and the year in which the wage was earned.
 
 Wages increase by approximately $10,000$, in a roughly linear (or straight-line) fashion, between 2003 - 09. Though this rise is very slightly relative to the variability in the data. Wages are also typically greater for individuals with higher education levels.
-
-### SVM :
-
-##### Support Vector Classification :
-The aim of Support Vector classification is to devise a computationally efficient way of learning ?good? separating hyperplanes in a high dimensional feature space. Here, :
-* By 'good' hyperplanes we consider the ones optimising the generalisation bounds, and
-* By 'computationally efficient' we mean algorithms able to deal with sample sizes of the order of 100 000 instances.
-
-**Pre-requisites** :
-* The generalisation theory gives clear guidance about how to control capacity and hence prevent overfitting by controlling the hyperplane margin measures, while
-
-* Optimisation theory provides the mathematical techniques necessary to find hyperplanes optimising these measures.
-
-Different generalisation bounds exist, motivating different algorithms: one can for example optimise the maximal margin, the margin distribution, the number of support vectors, etc.
-
-**Focus** :
-* Reduce the problem to minimising the norm of the weight vector.
-
-#### SVMs

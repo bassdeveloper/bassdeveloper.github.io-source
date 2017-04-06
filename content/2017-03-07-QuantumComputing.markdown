@@ -6,6 +6,7 @@ Tags: Quantum Computing, Qubit
 Slug: qubit
 Authors: Rishabh Chakrabarti
 Summary: Trying to explore the field of Quantum Computing
+Status:draft
 
 # Qubit
 
@@ -35,4 +36,4 @@ Entanglement is a very particular type of quantum superposition and does not hav
 
 In an entangled state, the whole system is in a definite state, even though the parts are not.
 
-Observing one of 2 entangled qubits causes it to behave randomly, but tells the observer exactly how the other qubit would act if a similar observation were made on it. This is because entanglement involves a correlation between individually random behaviours of the 2 qubits, it cannot be used to send a message. 
+Observing one of 2 entangled qubits causes it to behave randomly, but tells the observer exactly how the other qubit would act if a similar observation were made on it. This is because entanglement involves a correlation between individually random behaviours of the 2 qubits, it cannot be used to send a message.
