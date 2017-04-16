@@ -3,7 +3,7 @@ Date: 2017-01-24 12:50
 Modified: 2017-01-24 12:50
 Category: Learning
 Tags: Neural Networks, Speech recognition
-Slug: neural
+Slug: neural_nlp
 Authors: Rishabh Chakrabarti
 Summary: Dive into Neural Networks to build End-to-End Systems
 Status:draft

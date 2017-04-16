@@ -18,6 +18,7 @@ Status:published
 * **SVM is a classification algorithm**
 
 ### Example :
+
 ![SVM_Training]({filename}/assets/2017-01-17-SVM-e7301.png)
 
 * We have plotted the size and weight of several people, and there is also a way to distinguish between men and women.
@@ -27,8 +28,6 @@ With such data, using a SVM will allow us to answer the following question:
 > Given a particular data point (weight and size), is the person a man or a woman ?
 
 * For instance:  if someone measures 175 cm and weights 80 kg, is it a man of a woman?
-
-
 
 ## Hyperplane
 
@@ -79,9 +78,9 @@ If we define a point $A(3,4)$ in $\Re^2$, we can plot it like this :
 
 i.e. there is a vector between origin and A.
 
-If we say that the point at the origin is the point $O(0,0)O(0,0)$ then the vector above is the vector $\vec{OA}$. We could also give it an arbitrary name such as **$u$**.
+If we say that the point at the origin is the point $O(0,0)$ then the vector above is the vector $\vec{OA}$. We could also give it an arbitrary name such as **$u$**.
 
-> Definition: A vector is an object that has both a magnitude and a direction.
+> **Definition**: A vector is an object that has both a magnitude and a direction.
 
 ### SVM HyperPlane :
 
@@ -111,6 +110,7 @@ $$w^Tx=y-mx-c$$
 The 2 equations are just different ways of expressing the same thing.
 
 Note : $w_0$ is $-c$, which means that this value determines the intersection of the line with the vertical axis.
+
 > We use the hyperplane equation because it is then easy to work in more than 2 dimensions
 
 > The vector **$w$** will always be normal to the hyperplane.
@@ -140,9 +140,11 @@ and $$x\begin{pmatrix} x_1 \\ x_2 \\ \end{pmatrix}$$
 
 We can view the point $A$ as a vector from the origin to $A$.
 If we project it onto the normal vector $w$.
+
 ![Distance_g3]({filename}/assets/2017-01-17-SVM-8168b.png)
 
 We get the vector $p$ after projection.
+
 ![Distance_g3]({filename}/assets/2017-01-17-SVM-00f62.png)
 
 Our goal is to find the distance between the point $A(3,4)$ and the hyperplane.
@@ -164,7 +166,7 @@ where $a_1$ is a scalar, called the **scalar projection of a onto b**, and $\hat
 * In turn, the scalar projection is defined as
 
 $$a_1 = |a|cos\theta =\vec{a}.\hat{b}=a.\frac{b}{|b|}$$
-where the operator $\dot$ denotes a dot product, $|a|$ is the length of a, and $\theta$ is the angle between $\vec{a}$ and $\vec{b}$.
+where the operator $\cdot$ denotes a dot product, $|a|$ is the length of a, and $\theta$ is the angle between $\vec{a}$ and $\vec{b}$.
 
 The scalar projection is equal to the length of the vector projection, with a minus sign if the direction of the projection is opposite to the direction of b.
 
@@ -481,9 +483,9 @@ The only variable we can change in this formula is the norm of $w$.
 
 Giving it different values:
 
-* When $|w| = 1 $ then $m=2$
-* When $|w| = 2 $ then $m=1$
-* * When $|w| = 4 $ then $m=\frac{1}{2}$
+* When $|w| = 1$ then $m=2$
+* When $|w| = 2$ then $m=1$
+* When $|w| = 4$ then $m=\frac{1}{2}$
 
 One can easily see that the bigger the norm is, the smaller the margin becomes.
 
