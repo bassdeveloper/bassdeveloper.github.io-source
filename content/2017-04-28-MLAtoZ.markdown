@@ -1,0 +1,44 @@
+Title: Machine Learning A-Z
+Date: 2017-04-28 01:28
+Modified: 2017-04-28 01:28
+Category: Data-Science
+Tags: Machine Learning, Predictive Analytics
+Slug: maclearn
+Authors: Rishabh Chakrabarti
+Summary: Machine Learning A-Z
+Status:draft
+
+# Where's the Machine?
+
+Lets start by looking at machine learning examples and application to get a broad picture of what we're going to discuss in the article.
+
+1. Facebook Image Tagging and Facial Recognition.
+2. Nintendo - Kinect Sports uses Random Forest
+3. Virtual Reality
+4. Speech-to-Text
+5. Robot Dogs - Reinforcement Learning
+6. Facebook Advertisements
+7. Amazon, Audible recommender systems
+8. Medical systems
+9. Space Machine Learning
+10. Expore unknown territories like Mars
+
+## The Future
+
+Why is Machine learning the future?
+
+1 letter takes 1 byte of data. A page takes roughly 1KB of data. A 500 double-sided page notebook would take 1MB.
+1GB = fits the Human Genome ~ about 725 MB of space.
+80 years, filmed with an HD camera and you can fit the data in 1TB.
+
+> Since the dawn of time till 2005, humans have created 130 Exabytes of data.
+
+> 2010 - 1200 Exabytes
+> 2015 - 7900 Exabytes
+> 2020 - 40900 Exabytes (estimated)
+
+Source : IDC's Digital Universe Study, Dec 2012
+
+Data is growing exponentially.
+
+To use the data that is generated, we need to use Machine Learning algorithms since all the data needs to be examined and utilized.    

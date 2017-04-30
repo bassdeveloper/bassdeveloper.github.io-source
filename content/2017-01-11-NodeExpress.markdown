@@ -15,7 +15,7 @@ Express is a minimal and flexible Node.js web application framework that provide
 **Server.js file**
 This file is used to run the whole application. It hosts a server and listens to it on a particular port.
 
-## Request & Response
+### Request & Response
 Express application uses a callback function whose parameters are **request** and **response** objects:
 
 ```javascript
@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
 
 You can print **req** and **res** objects which provide a lot of information related to HTTP request and response including cookies, sessions, URl, etc.
 
-## Basic Routing:
+### Basic Routing:
 
 Routing refers to determining how an applicatoin responds to a client request to a particular endpoint, which is a URI ( or path) and a specific HTTP request method (GET, POST, and so on)
 
@@ -75,11 +75,11 @@ var server = app.listen(8081, function () {
 })
 ```
 
-## Body Parser
+### Body Parser
 
 Before we understand what the Body Parser does, we need to understand what is middleware:
 
-### Middleware:
+#### Middleware:
 
 * **Any software that provides services to software applications beyond those available from the operating system**.
 
