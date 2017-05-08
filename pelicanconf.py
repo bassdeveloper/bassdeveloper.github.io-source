@@ -47,4 +47,4 @@ PLUGIN_PATHS = ['./pelican-plugins']
 PLUGINS = ['render_math','summary']
 
 # Theme
-THEME= 'Flex'
+THEME= './pelican-themes/Flex'
