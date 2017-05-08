@@ -5,7 +5,7 @@ Category: Learning
 Tags: App-dev, 12factor
 Slug: 12factor
 Authors: Rishabh Chakrabarti
-Summary: Learnt about 12-Factor App from NPM module information. Liked it. Decided to simply move forward with my version/summary.
+Summary: Learnt about 12-Factor App from NPM module information. Liked it. Decided to move forward with my version/summary.
 Status:draft
 
 
@@ -13,11 +13,11 @@ Status:draft
 
 In the modern era, software is  commonly delivered as a service: called **Web Apps**, or *Software-as-a-Service*.
 
-The 12 factor app  is a methodology for building software-as-a-service apps that:
+The 12 factor app  is a method for building software-as-a-service apps that:
 
-* Use **declarative** formats for setup automation, to minimize time and cost for new developers joining the project
+* Use **declarative** formats for setup automation, to save time and money for new developers joining the project
 
->  Declarative programming is when you write your code in such a way that it describes what you want to do, and not how you want to do it. It is left up to the compiler to  figure out how.
+>  Declarative programming is when you write your code in such a way that it describes what you want to do, and not how you want to do it. It's left to the compiler to  figure out how.
 
 > Example: SQL, Prolog.
 

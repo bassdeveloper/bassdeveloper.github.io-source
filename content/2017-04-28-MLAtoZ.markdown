@@ -23,7 +23,7 @@ Lets start by looking at machine learning examples and application to get a broa
 9. Space Machine Learning
 10. Expore unknown territories like Mars
 
-## The Future
+#### The Future
 
 Why is Machine learning the future?
 
@@ -41,4 +41,8 @@ Source : IDC's Digital Universe Study, Dec 2012
 
 Data is growing exponentially.
 
-To use the data that is generated, we need to use Machine Learning algorithms since all the data needs to be examined and utilized.    
+To use the data that is generated, we need to use Machine Learning algorithms since all the data needs to be examined and utilized.
+
+## Data Pre-processing
+
+Data pre-processing is an essential step in Machine Learning.
