@@ -1,3 +1,4 @@
 pelican-plugins
 pelican-themes
 output
+*.pid
